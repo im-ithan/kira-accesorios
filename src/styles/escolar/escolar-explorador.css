@@ -1,0 +1,1889 @@
+/* ============================================================
+
+   ESCOLAR EXPLORADOR
+
+============================================================ */
+
+.escolar-explorador {
+
+  position: relative;
+
+  z-index: 20;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  background:
+
+    linear-gradient(
+
+      180deg,
+
+      #eef0df 0%,
+
+      #f4f0df 34%,
+
+      #f4f0df 100%
+
+    );
+
+  padding:
+
+    clamp(90px, 9vw, 135px)
+
+    clamp(20px, 5vw, 72px)
+
+    clamp(110px, 11vw, 160px);
+
+}
+
+.escolar-explorador-contenedor {
+
+  position: relative;
+
+  width: min(1380px, 100%);
+
+  margin: 0 auto;
+
+}
+
+/* ============================================================
+
+   CABECERA CORTA
+
+============================================================ */
+
+.escolar-explorador-cabecera {
+
+  position: relative;
+
+  z-index: 30;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  margin-bottom: clamp(34px, 4vw, 52px);
+
+}
+
+.escolar-explorador-cabecera-etiqueta {
+
+  margin: 0 0 10px;
+
+  font-size: 0.76rem;
+
+  font-weight: 760;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+
+  color: #718067;
+
+}
+
+.escolar-explorador-cabecera-titulo {
+
+  margin: 0;
+
+  font-size: clamp(2.2rem, 4.6vw, 4.8rem);
+
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 700;
+
+  color: #283329;
+
+}
+
+.escolar-explorador-cabecera-texto {
+
+  width: min(420px, 34vw);
+
+  margin: 0 0 6px;
+
+  font-size: 1rem;
+
+  line-height: 1.6;
+
+  color: rgba(40, 51, 41, 0.66);
+
+}
+
+/* ============================================================
+
+   NAVEGACIÓN DE SUBCATEGORÍAS
+
+============================================================ */
+
+.escolar-explorador-navegacion {
+
+  position: relative;
+
+  z-index: 35;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  width: 100%;
+
+  overflow-x: auto;
+
+  padding:
+
+    4px
+
+    2px
+
+    22px;
+
+  scrollbar-width: none;
+
+  overscroll-behavior-inline: contain;
+
+  -webkit-overflow-scrolling: touch;
+
+}
+
+.escolar-explorador-navegacion::-webkit-scrollbar {
+
+  display: none;
+
+}
+
+.escolar-explorador-pestana {
+
+  flex: 0 0 auto;
+
+  min-height: 48px;
+
+  padding:
+
+    0
+
+    23px;
+
+  border:
+
+    1px
+
+    solid
+
+    rgba(73, 106, 67, 0.13);
+
+  border-radius: 999px;
+
+  background:
+
+    rgba(255, 255, 255, 0.6);
+
+  color: #344333;
+
+  font: inherit;
+
+  font-size: 0.92rem;
+
+  font-weight: 680;
+
+  cursor: pointer;
+
+  box-shadow:
+
+    0 8px 22px
+
+    rgba(40, 51, 41, 0.035);
+
+  transition:
+
+    transform 200ms ease,
+
+    background-color 200ms ease,
+
+    color 200ms ease,
+
+    border-color 200ms ease,
+
+    box-shadow 200ms ease;
+
+}
+
+.escolar-explorador-pestana:hover {
+
+  transform: translateY(-2px);
+
+  border-color:
+
+    rgba(73, 106, 67, 0.28);
+
+  box-shadow:
+
+    0 12px 26px
+
+    rgba(40, 51, 41, 0.07);
+
+}
+
+.escolar-explorador-pestana:focus-visible {
+
+  outline:
+
+    3px
+
+    solid
+
+    rgba(232, 201, 91, 0.72);
+
+  outline-offset: 3px;
+
+}
+
+.escolar-explorador-pestana-activa {
+
+  background: #496a43;
+
+  color: #f8f5e8;
+
+  border-color: #496a43;
+
+  box-shadow:
+
+    0 12px 24px
+
+    rgba(54, 81, 50, 0.16);
+
+}
+
+/* ============================================================
+
+   ESCENA PRINCIPAL
+
+============================================================ */
+
+.escolar-explorador-escena {
+
+  position: relative;
+
+  min-height: 860px;
+
+  margin-top: 10px;
+
+  overflow: hidden;
+
+  border-radius:
+
+    clamp(28px, 4vw, 52px);
+
+  background:
+
+    radial-gradient(
+
+      circle at 79% 27%,
+
+      rgba(232, 201, 91, 0.2),
+
+      transparent 28%
+
+    ),
+
+    radial-gradient(
+
+      circle at 22% 82%,
+
+      rgba(170, 181, 139, 0.2),
+
+      transparent 34%
+
+    ),
+
+    linear-gradient(
+
+      135deg,
+
+      #f8f4e6 0%,
+
+      #eff1df 50%,
+
+      #dde6d3 100%
+
+    );
+
+  box-shadow:
+
+    0 35px 75px
+
+    rgba(47, 67, 44, 0.08),
+
+    inset 0 0 0 1px
+
+    rgba(73, 106, 67, 0.07);
+
+  isolation: isolate;
+
+  animation:
+
+    escolar-explorador-escena-entrada
+
+    420ms
+
+    ease
+
+    both;
+
+}
+
+@keyframes escolar-explorador-escena-entrada {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+
+      translateY(12px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+
+      translateY(0);
+
+  }
+
+}
+
+/* ============================================================
+
+   INFORMACIÓN DE SUBCATEGORÍA
+
+============================================================ */
+
+.escolar-explorador-informacion {
+
+  position: absolute;
+
+  z-index: 30;
+
+  left:
+
+    clamp(30px, 5vw, 76px);
+
+  top:
+
+    clamp(48px, 6vw, 84px);
+
+  width:
+
+    min(430px, 38vw);
+
+}
+
+.escolar-explorador-mini-etiqueta {
+
+  margin:
+
+    0
+
+    0
+
+    11px;
+
+  font-size: 0.74rem;
+
+  font-weight: 760;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+
+  color: #76856c;
+
+}
+
+.escolar-explorador-subtitulo {
+
+  margin: 0;
+
+  font-size:
+
+    clamp(2.8rem, 5vw, 5.3rem);
+
+  line-height: 0.94;
+
+  letter-spacing: -0.055em;
+
+  color: #283329;
+
+}
+
+.escolar-explorador-texto {
+
+  max-width: 390px;
+
+  margin:
+
+    22px
+
+    0
+
+    0;
+
+  font-size: 1rem;
+
+  line-height: 1.65;
+
+  color:
+
+    rgba(40, 51, 41, 0.68);
+
+}
+
+.escolar-explorador-enlace {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 26px;
+
+  padding-bottom: 4px;
+
+  border-bottom:
+
+    1px
+
+    solid
+
+    rgba(73, 106, 67, 0.3);
+
+  color: #496a43;
+
+  font-size: 0.93rem;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+
+    gap 180ms ease,
+
+    border-color 180ms ease;
+
+}
+
+.escolar-explorador-enlace:hover {
+
+  gap: 15px;
+
+  border-color: #496a43;
+
+}
+
+.escolar-explorador-enlace:focus-visible {
+
+  outline:
+
+    3px
+
+    solid
+
+    rgba(73, 106, 67, 0.3);
+
+  outline-offset: 5px;
+
+  border-radius: 4px;
+
+}
+
+/* ============================================================
+
+   KIRA
+
+============================================================ */
+
+.escolar-explorador-kira {
+
+  position: absolute;
+
+  z-index: 20;
+
+  right:
+
+    clamp(50px, 8vw, 130px);
+
+  top:
+
+    clamp(35px, 5vw, 70px);
+
+  width:
+
+    clamp(300px, 30vw, 470px);
+
+  height:
+
+    clamp(340px, 35vw, 520px);
+
+  pointer-events: none;
+
+  user-select: none;
+
+}
+
+.escolar-explorador-kira-halo {
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  width: 86%;
+
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  transform:
+
+    translate(-50%, -48%);
+
+  background:
+
+    radial-gradient(
+
+      circle,
+
+      rgba(255, 255, 255, 0.48) 0%,
+
+      rgba(232, 201, 91, 0.12) 38%,
+
+      rgba(221, 230, 211, 0.18) 66%,
+
+      transparent 72%
+
+    );
+
+  filter:
+
+    blur(4px);
+
+  animation:
+
+    escolar-explorador-halo
+
+    6s
+
+    ease-in-out
+
+    infinite;
+
+}
+
+@keyframes escolar-explorador-halo {
+
+  0%,
+
+  100% {
+
+    transform:
+
+      translate(-50%, -48%)
+
+      scale(1);
+
+  }
+
+  50% {
+
+    transform:
+
+      translate(-50%, -48%)
+
+      scale(1.05);
+
+  }
+
+}
+
+.escolar-explorador-kira-imagen {
+
+  position: absolute;
+
+  inset: 0;
+
+  transform-origin:
+
+    center bottom;
+
+  filter:
+
+    drop-shadow(
+
+      0 28px 34px
+
+      rgba(32, 35, 31, 0.12)
+
+    );
+
+  animation:
+
+    escolar-explorador-kira-flota
+
+    5.4s
+
+    ease-in-out
+
+    infinite;
+
+}
+
+@keyframes escolar-explorador-kira-flota {
+
+  0%,
+
+  100% {
+
+    transform:
+
+      translateY(7px)
+
+      rotate(-0.7deg);
+
+  }
+
+  50% {
+
+    transform:
+
+      translateY(-5px)
+
+      rotate(0.8deg);
+
+  }
+
+}
+
+.escolar-explorador-kira-estrella {
+
+  position: absolute;
+
+  z-index: 3;
+
+  color: #d1ad3b;
+
+  pointer-events: none;
+
+  animation:
+
+    escolar-explorador-estrella
+
+    3.6s
+
+    ease-in-out
+
+    infinite;
+
+}
+
+.escolar-explorador-kira-estrella-1 {
+
+  right: 5%;
+
+  top: 21%;
+
+  font-size: 1.25rem;
+
+}
+
+.escolar-explorador-kira-estrella-2 {
+
+  left: 5%;
+
+  bottom: 24%;
+
+  font-size: 0.85rem;
+
+  animation-delay: 1.1s;
+
+}
+
+@keyframes escolar-explorador-estrella {
+
+  0%,
+
+  100% {
+
+    opacity: 0.35;
+
+    transform:
+
+      scale(0.85)
+
+      rotate(0deg);
+
+  }
+
+  50% {
+
+    opacity: 0.9;
+
+    transform:
+
+      scale(1.1)
+
+      rotate(12deg);
+
+  }
+
+}
+
+/* ============================================================
+
+   TRANSICIÓN HACIA PRODUCTOS
+
+============================================================ */
+
+.escolar-explorador-transicion {
+
+  position: absolute;
+
+  z-index: 25;
+
+  left:
+
+    clamp(30px, 5vw, 76px);
+
+  right:
+
+    clamp(30px, 5vw, 76px);
+
+  top: 495px;
+
+  display: grid;
+
+  grid-template-columns:
+
+    minmax(35px, 1fr)
+
+    auto
+
+    minmax(35px, 1fr);
+
+  align-items: center;
+
+  gap: 18px;
+
+  pointer-events: none;
+
+}
+
+.escolar-explorador-transicion span {
+
+  display: block;
+
+  width: 100%;
+
+  height: 1px;
+
+  background:
+
+    linear-gradient(
+
+      90deg,
+
+      transparent,
+
+      rgba(73, 106, 67, 0.2),
+
+      transparent
+
+    );
+
+}
+
+.escolar-explorador-transicion p {
+
+  margin: 0;
+
+  font-size: 0.73rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  color:
+
+    rgba(73, 106, 67, 0.55);
+
+}
+
+/* ============================================================
+
+   CARRUSEL / CINTA
+
+============================================================ */
+
+.escolar-explorador-carrusel {
+
+  position: absolute;
+
+  z-index: 35;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: 44px;
+
+  width: 100%;
+
+}
+
+.escolar-explorador-carrusel-mascara {
+
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  padding:
+
+    30px
+
+    0
+
+    32px;
+
+  -webkit-mask-image:
+
+    linear-gradient(
+
+      90deg,
+
+      transparent 0%,
+
+      #000 5%,
+
+      #000 95%,
+
+      transparent 100%
+
+    );
+
+  mask-image:
+
+    linear-gradient(
+
+      90deg,
+
+      transparent 0%,
+
+      #000 5%,
+
+      #000 95%,
+
+      transparent 100%
+
+    );
+
+}
+
+.escolar-explorador-carrusel-pista {
+
+  display: flex;
+
+  align-items: flex-end;
+
+  width: max-content;
+
+  gap:
+
+    clamp(18px, 2vw, 28px);
+
+  padding-inline:
+
+    clamp(30px, 5vw, 72px);
+
+  will-change: transform;
+
+  animation:
+
+    escolar-explorador-carrusel-movimiento
+
+    36s
+
+    linear
+
+    infinite;
+
+}
+
+.escolar-explorador-carrusel-mascara:hover
+
+  .escolar-explorador-carrusel-pista {
+
+  animation-play-state: paused;
+
+}
+
+@keyframes escolar-explorador-carrusel-movimiento {
+
+  from {
+
+    transform:
+
+      translate3d(0, 0, 0);
+
+  }
+
+  to {
+
+    transform:
+
+      translate3d(-50%, 0, 0);
+
+  }
+
+}
+
+/* ============================================================
+
+   PRODUCTO
+
+============================================================ */
+
+.escolar-explorador-producto {
+
+  position: relative;
+
+  flex:
+
+    0
+
+    0
+
+    clamp(190px, 17vw, 235px);
+
+  min-height:
+
+    clamp(230px, 20vw, 285px);
+
+  padding:
+
+    18px
+
+    18px
+
+    16px;
+
+  overflow: hidden;
+
+  border:
+
+    1px
+
+    solid
+
+    rgba(73, 106, 67, 0.08);
+
+  border-radius:
+
+    clamp(22px, 2vw, 30px);
+
+  background:
+
+    rgba(255, 255, 255, 0.56);
+
+  -webkit-backdrop-filter:
+
+    blur(12px);
+
+  backdrop-filter:
+
+    blur(12px);
+
+  box-shadow:
+
+    0 17px 35px
+
+    rgba(40, 51, 41, 0.055);
+
+  text-decoration: none;
+
+  transform:
+
+    translateY(var(--altura-producto))
+
+    rotate(var(--rotacion-producto));
+
+  transition:
+
+    transform 220ms ease,
+
+    box-shadow 220ms ease,
+
+    background-color 220ms ease;
+
+  animation:
+
+    escolar-explorador-producto-aparece
+
+    480ms
+
+    calc(var(--indice-producto) * 45ms)
+
+    ease
+
+    both;
+
+}
+
+@keyframes escolar-explorador-producto-aparece {
+
+  from {
+
+    opacity: 0;
+
+  }
+
+  to {
+
+    opacity: 1;
+
+  }
+
+}
+
+.escolar-explorador-producto:hover {
+
+  z-index: 5;
+
+  transform:
+
+    translateY(-10px)
+
+    rotate(0deg)
+
+    scale(1.025);
+
+  background:
+
+    rgba(255, 255, 255, 0.76);
+
+  box-shadow:
+
+    0 25px 48px
+
+    rgba(40, 51, 41, 0.1);
+
+}
+
+.escolar-explorador-producto:focus-visible {
+
+  z-index: 6;
+
+  outline:
+
+    3px
+
+    solid
+
+    rgba(73, 106, 67, 0.32);
+
+  outline-offset: 4px;
+
+}
+
+.escolar-explorador-producto-etiqueta {
+
+  position: absolute;
+
+  z-index: 4;
+
+  left: 16px;
+
+  top: 15px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 27px;
+
+  padding:
+
+    0
+
+    10px;
+
+  border-radius: 999px;
+
+  background:
+
+    rgba(244, 240, 223, 0.92);
+
+  color: #496a43;
+
+  font-size: 0.68rem;
+
+  font-weight: 750;
+
+  letter-spacing: 0.04em;
+
+  box-shadow:
+
+    0 5px 14px
+
+    rgba(40, 51, 41, 0.05);
+
+}
+
+.escolar-explorador-producto-imagen {
+
+  position: relative;
+
+  width: 100%;
+
+  height:
+
+    clamp(135px, 12vw, 175px);
+
+  margin-top: 8px;
+
+  transition:
+
+    transform 240ms ease;
+
+}
+
+.escolar-explorador-producto:hover
+
+  .escolar-explorador-producto-imagen {
+
+  transform:
+
+    translateY(-4px)
+
+    scale(1.055);
+
+}
+
+.escolar-explorador-producto-info {
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-top: 9px;
+
+}
+
+.escolar-explorador-producto-nombre {
+
+  max-width: 140px;
+
+  color: #283329;
+
+  font-size: 0.88rem;
+
+  line-height: 1.3;
+
+  font-weight: 650;
+
+}
+
+.escolar-explorador-producto-precio {
+
+  flex: 0 0 auto;
+
+  color: #496a43;
+
+  font-size: 0.93rem;
+
+}
+
+.escolar-explorador-producto-flecha {
+
+  position: absolute;
+
+  right: 17px;
+
+  bottom: 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 29px;
+
+  height: 29px;
+
+  border-radius: 50%;
+
+  background:
+
+    rgba(73, 106, 67, 0.08);
+
+  color: #496a43;
+
+  font-size: 0.85rem;
+
+  opacity: 0;
+
+  transform:
+
+    translateY(5px);
+
+  transition:
+
+    opacity 180ms ease,
+
+    transform 180ms ease,
+
+    background-color 180ms ease;
+
+}
+
+.escolar-explorador-producto:hover
+
+  .escolar-explorador-producto-flecha {
+
+  opacity: 1;
+
+  transform:
+
+    translateY(0);
+
+  background:
+
+    rgba(73, 106, 67, 0.13);
+
+}
+
+/* ============================================================
+
+   DECORACIÓN DE FONDO
+
+============================================================ */
+
+.escolar-explorador-decoracion {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+}
+
+.escolar-explorador-forma {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter:
+
+    blur(2px);
+
+  opacity: 0.42;
+
+}
+
+.escolar-explorador-forma-1 {
+
+  width: 250px;
+
+  height: 250px;
+
+  right: 18%;
+
+  top: 11%;
+
+  background:
+
+    rgba(232, 201, 91, 0.13);
+
+}
+
+.escolar-explorador-forma-2 {
+
+  width: 300px;
+
+  height: 300px;
+
+  left: -90px;
+
+  bottom: 10%;
+
+  background:
+
+    rgba(170, 181, 139, 0.14);
+
+}
+
+.escolar-explorador-punto {
+
+  position: absolute;
+
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #e98b72;
+
+  opacity: 0.48;
+
+}
+
+.escolar-explorador-punto-1 {
+
+  right: 31%;
+
+  top: 24%;
+
+}
+
+.escolar-explorador-punto-2 {
+
+  right: 10%;
+
+  top: 42%;
+
+}
+
+.escolar-explorador-trazo {
+
+  position: absolute;
+
+  height: 1px;
+
+  background:
+
+    rgba(73, 106, 67, 0.12);
+
+  transform-origin:
+
+    left center;
+
+}
+
+.escolar-explorador-trazo-1 {
+
+  width: 115px;
+
+  right: 29%;
+
+  top: 18%;
+
+  transform:
+
+    rotate(-18deg);
+
+}
+
+.escolar-explorador-trazo-2 {
+
+  width: 90px;
+
+  left: 34%;
+
+  top: 44%;
+
+  transform:
+
+    rotate(22deg);
+
+}
+
+/* ============================================================
+
+   TABLET
+
+============================================================ */
+
+@media (max-width: 1050px) {
+
+  .escolar-explorador-cabecera {
+
+    align-items: flex-start;
+
+  }
+
+  .escolar-explorador-cabecera-texto {
+
+    width: min(360px, 40vw);
+
+  }
+
+  .escolar-explorador-escena {
+
+    min-height: 900px;
+
+  }
+
+  .escolar-explorador-informacion {
+
+    width:
+
+      min(410px, 46vw);
+
+  }
+
+  .escolar-explorador-kira {
+
+    right: 30px;
+
+    width: 330px;
+
+    height: 400px;
+
+  }
+
+  .escolar-explorador-transicion {
+
+    top: 495px;
+
+  }
+
+}
+
+/* ============================================================
+
+   MÓVIL
+
+============================================================ */
+
+@media (max-width: 760px) {
+
+  .escolar-explorador {
+
+    padding:
+
+      78px
+
+      18px
+
+      95px;
+
+  }
+
+  /* ----------------------------------------------------------
+
+     CABECERA
+
+  ---------------------------------------------------------- */
+
+  .escolar-explorador-cabecera {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+    margin-bottom: 30px;
+
+  }
+
+  .escolar-explorador-cabecera-titulo {
+
+    font-size:
+
+      clamp(2.4rem, 11vw, 3.5rem);
+
+  }
+
+  .escolar-explorador-cabecera-texto {
+
+    width: min(430px, 100%);
+
+  }
+
+  /* ----------------------------------------------------------
+
+     NAVEGACIÓN
+
+  ---------------------------------------------------------- */
+
+  .escolar-explorador-navegacion {
+
+    width:
+
+      calc(100% + 36px);
+
+    margin-inline: -18px;
+
+    padding:
+
+      4px
+
+      18px
+
+      20px;
+
+  }
+
+  .escolar-explorador-pestana {
+
+    min-height: 45px;
+
+    padding:
+
+      0
+
+      19px;
+
+  }
+
+  /* ----------------------------------------------------------
+
+     ESCENA
+
+  ---------------------------------------------------------- */
+
+  .escolar-explorador-escena {
+
+    min-height: 985px;
+
+    margin-top: 8px;
+
+    border-radius: 30px;
+
+  }
+
+  .escolar-explorador-informacion {
+
+    position: relative;
+
+    left: auto;
+
+    top: auto;
+
+    width: auto;
+
+    padding:
+
+      34px
+
+      25px
+
+      0;
+
+  }
+
+  .escolar-explorador-subtitulo {
+
+    font-size:
+
+      clamp(2.7rem, 12vw, 4rem);
+
+  }
+
+  .escolar-explorador-texto {
+
+    max-width: 420px;
+
+  }
+
+  /* ----------------------------------------------------------
+
+     KIRA
+
+  ---------------------------------------------------------- */
+
+  .escolar-explorador-kira {
+
+    top: 255px;
+
+    right: 50%;
+
+    width:
+
+      min(250px, 70vw);
+
+    height: 300px;
+
+    transform:
+
+      translateX(50%);
+
+  }
+
+  /* ----------------------------------------------------------
+
+     TRANSICIÓN
+
+  ---------------------------------------------------------- */
+
+  .escolar-explorador-transicion {
+
+    left: 22px;
+
+    right: 22px;
+
+    top: 565px;
+
+    gap: 10px;
+
+  }
+
+  .escolar-explorador-transicion p {
+
+    font-size: 0.61rem;
+
+    letter-spacing: 0.1em;
+
+  }
+
+  /* ----------------------------------------------------------
+
+     CARRUSEL
+
+  ---------------------------------------------------------- */
+
+  .escolar-explorador-carrusel {
+
+    bottom: 24px;
+
+  }
+
+  .escolar-explorador-carrusel-mascara {
+
+    overflow-x: auto;
+
+    padding:
+
+      26px
+
+      0
+
+      24px;
+
+    scrollbar-width: none;
+
+    -webkit-overflow-scrolling: touch;
+
+    overscroll-behavior-inline: contain;
+
+    -webkit-mask-image: none;
+
+    mask-image: none;
+
+  }
+
+  .escolar-explorador-carrusel-mascara::-webkit-scrollbar {
+
+    display: none;
+
+  }
+
+  .escolar-explorador-carrusel-pista {
+
+    gap: 14px;
+
+    padding:
+
+      0
+
+      20px;
+
+    animation: none;
+
+    transform: none;
+
+  }
+
+  .escolar-explorador-producto {
+
+    flex:
+
+      0
+
+      0
+
+      min(68vw, 235px);
+
+    min-height: 265px;
+
+    transform:
+
+      translateY(var(--altura-producto))
+
+      rotate(var(--rotacion-producto));
+
+  }
+
+  .escolar-explorador-producto-imagen {
+
+    height: 160px;
+
+  }
+
+}
+
+/* ============================================================
+
+   MÓVILES PEQUEÑOS
+
+============================================================ */
+
+@media (max-width: 420px) {
+
+  .escolar-explorador {
+
+    padding-inline: 15px;
+
+  }
+
+  .escolar-explorador-navegacion {
+
+    width:
+
+      calc(100% + 30px);
+
+    margin-inline: -15px;
+
+    padding-inline: 15px;
+
+  }
+
+  .escolar-explorador-escena {
+
+    min-height: 960px;
+
+  }
+
+  .escolar-explorador-informacion {
+
+    padding:
+
+      30px
+
+      20px
+
+      0;
+
+  }
+
+  .escolar-explorador-kira {
+
+    top: 265px;
+
+    width: 220px;
+
+    height: 265px;
+
+  }
+
+  .escolar-explorador-transicion {
+
+    top: 545px;
+
+  }
+
+  .escolar-explorador-producto {
+
+    flex-basis: 205px;
+
+    min-height: 245px;
+
+    padding: 15px;
+
+  }
+
+  .escolar-explorador-producto-imagen {
+
+    height: 145px;
+
+  }
+
+}
+
+/* ============================================================
+
+   MOVIMIENTO REDUCIDO
+
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .escolar-explorador-escena,
+
+  .escolar-explorador-kira-imagen,
+
+  .escolar-explorador-kira-halo,
+
+  .escolar-explorador-kira-estrella,
+
+  .escolar-explorador-producto,
+
+  .escolar-explorador-carrusel-pista {
+
+    animation: none;
+
+  }
+
+  .escolar-explorador-carrusel-pista {
+
+    transform: none;
+
+  }
+
+  .escolar-explorador-carrusel-mascara {
+
+    overflow-x: auto;
+
+    -webkit-mask-image: none;
+
+    mask-image: none;
+
+  }
+
+  .escolar-explorador-pestana,
+
+  .escolar-explorador-enlace,
+
+  .escolar-explorador-producto,
+
+  .escolar-explorador-producto-imagen,
+
+  .escolar-explorador-producto-flecha {
+
+    transition: none;
+
+  }
+
+}

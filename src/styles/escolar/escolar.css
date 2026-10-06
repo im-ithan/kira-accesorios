@@ -1,0 +1,2134 @@
+/* ==========================================================
+   KIRA ESCOLAR
+   SISTEMA GENERAL
+========================================================== */
+
+.escolar-selva {
+  --progreso-selva: 0;
+}
+
+/* ==========================================================
+   BASE DE VEGETACIÓN GLOBAL
+========================================================== */
+
+.escolar-selva-hojas {
+  transform-origin: center bottom;
+  backface-visibility: hidden;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+.escolar-crecimiento {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  transform-origin: center bottom;
+  backface-visibility: hidden;
+
+  will-change:
+    transform,
+    opacity;
+
+  animation-name: escolar-crecer-vegetacion;
+  animation-duration: 1.65s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+}
+
+.escolar-brisa {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  transform-origin: center bottom;
+  backface-visibility: hidden;
+
+  will-change: transform;
+}
+
+/* ==========================================================
+   CRECIMIENTO INICIAL
+========================================================== */
+
+@keyframes escolar-crecer-vegetacion {
+  0% {
+    opacity: 0;
+
+    transform:
+      translate3d(0, 58px, 0)
+      scale(0.24);
+  }
+
+  28% {
+    opacity: 0.5;
+  }
+
+  66% {
+    opacity: 1;
+
+    transform:
+      translate3d(0, -7px, 0)
+      scale(1.07);
+  }
+
+  84% {
+    transform:
+      translate3d(0, 3px, 0)
+      scale(0.985);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+}
+
+/* ==========================================================
+   DELAYS DE CRECIMIENTO
+========================================================== */
+
+.escolar-crecimiento-1 {
+  animation-delay: 0ms;
+}
+
+.escolar-crecimiento-2 {
+  animation-delay: 90ms;
+}
+
+.escolar-crecimiento-3 {
+  animation-delay: 180ms;
+}
+
+.escolar-crecimiento-4 {
+  animation-delay: 270ms;
+}
+
+.escolar-crecimiento-5 {
+  animation-delay: 360ms;
+}
+
+.escolar-crecimiento-6 {
+  animation-delay: 450ms;
+}
+
+.escolar-crecimiento-7 {
+  animation-delay: 560ms;
+}
+
+.escolar-crecimiento-8 {
+  animation-delay: 650ms;
+}
+
+.escolar-crecimiento-9 {
+  animation-delay: 760ms;
+}
+
+.escolar-crecimiento-10 {
+  animation-delay: 850ms;
+}
+
+.escolar-crecimiento-11 {
+  animation-delay: 960ms;
+}
+
+.escolar-crecimiento-12 {
+  animation-delay: 1050ms;
+}
+
+.escolar-crecimiento-13 {
+  animation-delay: 520ms;
+}
+
+.escolar-crecimiento-14 {
+  animation-delay: 620ms;
+}
+
+.escolar-crecimiento-15 {
+  animation-delay: 880ms;
+}
+
+.escolar-crecimiento-16 {
+  animation-delay: 980ms;
+}
+
+/* ==========================================================
+   SELVA PROPIA DE LA PORTADA
+========================================================== */
+
+/*
+  IMPORTANTE:
+
+  hojas.png se usa únicamente como masa vegetal grande
+  en esquinas / bordes y debe quedar parcialmente fuera
+  del viewport.
+
+  Las hojas individuales son las que pueden entrar hacia
+  el interior de la composición.
+*/
+
+.escolar-portada-selva {
+  transform-origin: center bottom;
+  backface-visibility: hidden;
+
+  will-change:
+    transform,
+    opacity,
+    filter;
+
+  animation-name: escolar-portada-selva-entrada;
+  animation-duration: 1.65s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+}
+
+@keyframes escolar-portada-selva-entrada {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
+  }
+
+  35% {
+    opacity: 0.45;
+  }
+
+  70% {
+    opacity: 0.92;
+    filter: blur(1px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* ==========================================================
+   DELAYS SELVA PORTADA
+========================================================== */
+
+.escolar-portada-selva-inferior-izquierda {
+  animation-delay: 70ms;
+}
+
+.escolar-portada-selva-inferior-derecha {
+  animation-delay: 140ms;
+}
+
+.escolar-portada-selva-superior-izquierda {
+  animation-delay: 220ms;
+}
+
+.escolar-portada-selva-superior-derecha {
+  animation-delay: 290ms;
+}
+
+.escolar-portada-selva-lateral-izquierda {
+  animation-delay: 360ms;
+}
+
+.escolar-portada-selva-lateral-derecha {
+  animation-delay: 430ms;
+}
+
+/* ==========================================================
+   AJUSTE DE APARIENCIA
+   SELVA PORTADA
+========================================================== */
+
+.escolar-portada-selva-inferior-izquierda,
+.escolar-portada-selva-inferior-derecha {
+  filter:
+    saturate(0.98)
+    brightness(0.94);
+}
+
+.escolar-portada-selva-superior-izquierda,
+.escolar-portada-selva-superior-derecha {
+  filter:
+    saturate(0.95)
+    brightness(0.96);
+}
+
+.escolar-portada-selva-lateral-izquierda,
+.escolar-portada-selva-lateral-derecha {
+  filter:
+    saturate(0.94)
+    brightness(0.97);
+}
+
+/* ==========================================================
+   COMPORTAMIENTO DE VEGETACIÓN GLOBAL
+========================================================== */
+
+.escolar-vegetacion-portada {
+  transition:
+    filter 250ms ease-out,
+    opacity 250ms ease-out;
+}
+
+.escolar-vegetacion-acompanante {
+  transition:
+    filter 250ms ease-out,
+    opacity 250ms ease-out;
+}
+
+.escolar-vegetacion-profunda {
+  filter:
+    saturate(0.92)
+    brightness(0.94);
+}
+
+.escolar-vegetacion-frontal {
+  filter:
+    saturate(1.04)
+    contrast(1.01);
+}
+
+.escolar-vegetacion-sale {
+  opacity:
+    clamp(
+      0,
+      calc(1 - var(--progreso-selva) * 7),
+      1
+    );
+}
+
+.escolar-vegetacion-tardia {
+  filter:
+    saturate(
+      calc(0.82 + var(--progreso-selva) * 0.35)
+    )
+    brightness(
+      calc(0.88 + var(--progreso-selva) * 0.12)
+    );
+}
+
+/* ==========================================================
+   LUCES AMBIENTALES
+========================================================== */
+
+.escolar-luz-selva {
+  pointer-events: none;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+.escolar-luz-selva-1 {
+  animation:
+    escolar-luz-respirar-1
+    12s
+    ease-in-out
+    infinite;
+}
+
+.escolar-luz-selva-2 {
+  animation:
+    escolar-luz-respirar-2
+    15s
+    ease-in-out
+    1.5s
+    infinite;
+}
+
+@keyframes escolar-luz-respirar-1 {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.92);
+  }
+
+  50% {
+    opacity: 0.85;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes escolar-luz-respirar-2 {
+  0%,
+  100% {
+    opacity: 0.38;
+    transform: scale(0.95);
+  }
+
+  50% {
+    opacity: 0.78;
+    transform: scale(1.08);
+  }
+}
+
+/* ==========================================================
+   PARALLAX
+   FONDO IZQUIERDO
+========================================================== */
+
+.escolar-selva-fondo-izquierda {
+  transform:
+    translate3d(
+      calc(var(--progreso-selva) * -70px),
+      calc(var(--progreso-selva) * 38px),
+      0
+    )
+    rotate(
+      calc(-3deg + var(--progreso-selva) * 5deg)
+    )
+    scale(
+      calc(0.96 + var(--progreso-selva) * 0.12)
+    );
+}
+
+/* ==========================================================
+   PARALLAX
+   FONDO DERECHO
+========================================================== */
+
+.escolar-selva-fondo-derecha {
+  transform:
+    translate3d(
+      calc(var(--progreso-selva) * 72px),
+      calc(var(--progreso-selva) * 34px),
+      0
+    )
+    scaleX(-1)
+    rotate(
+      calc(2deg - var(--progreso-selva) * 5deg)
+    )
+    scale(
+      calc(1.02 - var(--progreso-selva) * 0.06)
+    );
+}
+
+/* ==========================================================
+   PARALLAX
+   SUPERIOR IZQUIERDA
+========================================================== */
+
+.escolar-selva-superior-izquierda {
+  transform:
+    translate3d(
+      calc(var(--progreso-selva) * -180px),
+      calc(var(--progreso-selva) * 75px),
+      0
+    )
+    rotate(
+      calc(-18deg - var(--progreso-selva) * 16deg)
+    )
+    scale(
+      calc(0.94 + var(--progreso-selva) * 0.08)
+    );
+}
+
+/* ==========================================================
+   PARALLAX
+   SUPERIOR DERECHA
+========================================================== */
+
+.escolar-selva-superior-derecha {
+  transform:
+    translate3d(
+      calc(var(--progreso-selva) * 180px),
+      calc(var(--progreso-selva) * 70px),
+      0
+    )
+    scaleX(-1)
+    rotate(
+      calc(-11deg + var(--progreso-selva) * 15deg)
+    )
+    scale(
+      calc(0.96 + var(--progreso-selva) * 0.07)
+    );
+}
+
+/* ==========================================================
+   PARALLAX
+   LATERAL ALTA IZQUIERDA
+========================================================== */
+
+.escolar-selva-lateral-alta-izquierda {
+  transform:
+    translate3d(
+      calc(var(--progreso-selva) * -48px),
+      calc(var(--progreso-selva) * 34px),
+      0
+    )
+    rotate(
+      calc(14deg + var(--progreso-selva) * 7deg)
+    )
+    scale(
+      calc(0.94 + var(--progreso-selva) * 0.1)
+    );
+}
+
+/* ==========================================================
+   PARALLAX
+   LATERAL ALTA DERECHA
+========================================================== */
+
+.escolar-selva-lateral-alta-derecha {
+  transform:
+    translate3d(
+      calc(var(--progreso-selva) * 46px),
+      calc(var(--progreso-selva) * 38px),
+      0
+    )
+    scaleX(-1)
+    rotate(
+      calc(12deg - var(--progreso-selva) * 8deg)
+    )
+    scale(
+      calc(0.97 + var(--progreso-selva) * 0.08)
+    );
+}
+
+/* ==========================================================
+   PARALLAX
+   MEDIA IZQUIERDA
+========================================================== */
+
+.escolar-selva-media-izquierda {
+  transform:
+    translate3d(
+      calc(var(--progreso-selva) * -32px),
+      calc(var(--progreso-selva) * -24px),
+      0
+    )
+    rotate(
+      calc(-13deg + var(--progreso-selva) * 7deg)
+    )
+    scale(
+      calc(0.94 + var(--progreso-selva) * 0.08)
+    );
+}
+
+/* ==========================================================
+   PARALLAX
+   MEDIA DERECHA
+========================================================== */
+
+.escolar-selva-media-derecha {
+  transform:
+    translate3d(
+      calc(var(--progreso-selva) * 34px),
+      calc(var(--progreso-selva) * -18px),
+      0
+    )
+    scaleX(-1)
+    rotate(
+      calc(-9deg - var(--progreso-selva) * 6deg)
+    )
+    scale(
+      calc(1.03 - var(--progreso-selva) * 0.05)
+    );
+}
+
+/* ==========================================================
+   PARALLAX
+   FLOTANTE IZQUIERDA
+========================================================== */
+
+.escolar-selva-flotante-izquierda {
+  transform:
+    translate3d(
+      calc(var(--progreso-selva) * -42px),
+      calc(var(--progreso-selva) * -90px),
+      0
+    )
+    rotate(
+      calc(8deg + var(--progreso-selva) * 10deg)
+    )
+    scale(
+      calc(1.05 - var(--progreso-selva) * 0.12)
+    );
+}
+
+/* ==========================================================
+   PARALLAX
+   FLOTANTE DERECHA
+========================================================== */
+
+.escolar-selva-flotante-derecha {
+  transform:
+    translate3d(
+      calc(var(--progreso-selva) * 44px),
+      calc(var(--progreso-selva) * -78px),
+      0
+    )
+    scaleX(-1)
+    rotate(
+      calc(7deg - var(--progreso-selva) * 11deg)
+    )
+    scale(
+      calc(0.94 + var(--progreso-selva) * 0.12)
+    );
+}
+
+/* ==========================================================
+   PARALLAX
+   ACENTO IZQUIERDA
+========================================================== */
+
+.escolar-selva-acento-izquierda {
+  transform:
+    translate3d(
+      calc(var(--progreso-selva) * -22px),
+      calc(var(--progreso-selva) * -45px),
+      0
+    )
+    rotate(
+      calc(-8deg + var(--progreso-selva) * 10deg)
+    )
+    scale(
+      calc(0.86 + var(--progreso-selva) * 0.18)
+    );
+}
+
+/* ==========================================================
+   PARALLAX
+   ACENTO DERECHA
+========================================================== */
+
+.escolar-selva-acento-derecha {
+  transform:
+    translate3d(
+      calc(var(--progreso-selva) * 24px),
+      calc(var(--progreso-selva) * 36px),
+      0
+    )
+    scaleX(-1)
+    rotate(
+      calc(-5deg - var(--progreso-selva) * 9deg)
+    )
+    scale(
+      calc(0.88 + var(--progreso-selva) * 0.16)
+    );
+}
+
+/* ==========================================================
+   PARALLAX
+   FRONTAL IZQUIERDA
+========================================================== */
+
+.escolar-selva-frontal-izquierda {
+  transform:
+    translate3d(
+      calc(var(--progreso-selva) * -105px),
+      calc(var(--progreso-selva) * 48px),
+      0
+    )
+    rotate(
+      calc(7deg + var(--progreso-selva) * 12deg)
+    )
+    scale(
+      calc(1.04 + var(--progreso-selva) * 0.12)
+    );
+}
+
+/* ==========================================================
+   PARALLAX
+   FRONTAL DERECHA
+========================================================== */
+
+.escolar-selva-frontal-derecha {
+  transform:
+    translate3d(
+      calc(var(--progreso-selva) * 100px),
+      calc(var(--progreso-selva) * 44px),
+      0
+    )
+    scaleX(-1)
+    rotate(
+      calc(5deg - var(--progreso-selva) * 12deg)
+    )
+    scale(
+      calc(1.07 - var(--progreso-selva) * 0.08)
+    );
+}
+
+/* ==========================================================
+   PARALLAX
+   CERCANA IZQUIERDA
+========================================================== */
+
+.escolar-selva-cercana-izquierda {
+  transform:
+    translate3d(
+      calc(var(--progreso-selva) * -145px),
+      calc(var(--progreso-selva) * 65px),
+      0
+    )
+    rotate(
+      calc(12deg + var(--progreso-selva) * 15deg)
+    )
+    scale(
+      calc(1.08 + var(--progreso-selva) * 0.12)
+    );
+}
+
+/* ==========================================================
+   PARALLAX
+   CERCANA DERECHA
+========================================================== */
+
+.escolar-selva-cercana-derecha {
+  transform:
+    translate3d(
+      calc(var(--progreso-selva) * 140px),
+      calc(var(--progreso-selva) * 58px),
+      0
+    )
+    scaleX(-1)
+    rotate(
+      calc(9deg - var(--progreso-selva) * 15deg)
+    )
+    scale(
+      calc(1.1 - var(--progreso-selva) * 0.06)
+    );
+}
+
+/* ==========================================================
+   BRISA
+========================================================== */
+
+.escolar-brisa-fondo-izquierda {
+  animation:
+    escolar-brisa-fondo-izquierda
+    13s
+    ease-in-out
+    1.8s
+    infinite;
+}
+
+.escolar-brisa-fondo-derecha {
+  animation:
+    escolar-brisa-fondo-derecha
+    15s
+    ease-in-out
+    1.9s
+    infinite;
+}
+
+.escolar-brisa-superior-izquierda {
+  animation:
+    escolar-brisa-superior-izquierda
+    10.5s
+    ease-in-out
+    2s
+    infinite;
+}
+
+.escolar-brisa-superior-derecha {
+  animation:
+    escolar-brisa-superior-derecha
+    11.5s
+    ease-in-out
+    2.1s
+    infinite;
+}
+
+.escolar-brisa-lateral-alta-izquierda {
+  animation:
+    escolar-brisa-lateral-alta-izquierda
+    9.2s
+    ease-in-out
+    2.1s
+    infinite;
+}
+
+.escolar-brisa-lateral-alta-derecha {
+  animation:
+    escolar-brisa-lateral-alta-derecha
+    10s
+    ease-in-out
+    2.2s
+    infinite;
+}
+
+.escolar-brisa-media-izquierda {
+  animation:
+    escolar-brisa-media-izquierda
+    9s
+    ease-in-out
+    2.2s
+    infinite;
+}
+
+.escolar-brisa-media-derecha {
+  animation:
+    escolar-brisa-media-derecha
+    10.5s
+    ease-in-out
+    2.3s
+    infinite;
+}
+
+.escolar-brisa-flotante-izquierda {
+  animation:
+    escolar-brisa-flotante-izquierda
+    8s
+    ease-in-out
+    2.3s
+    infinite;
+}
+
+.escolar-brisa-flotante-derecha {
+  animation:
+    escolar-brisa-flotante-derecha
+    9.5s
+    ease-in-out
+    2.4s
+    infinite;
+}
+
+.escolar-brisa-acento-izquierda {
+  animation:
+    escolar-brisa-acento-izquierda
+    11.5s
+    ease-in-out
+    2.4s
+    infinite;
+}
+
+.escolar-brisa-acento-derecha {
+  animation:
+    escolar-brisa-acento-derecha
+    12.5s
+    ease-in-out
+    2.5s
+    infinite;
+}
+
+.escolar-brisa-frontal-izquierda {
+  animation:
+    escolar-brisa-frontal-izquierda
+    7.5s
+    ease-in-out
+    2.5s
+    infinite;
+}
+
+.escolar-brisa-frontal-derecha {
+  animation:
+    escolar-brisa-frontal-derecha
+    8.5s
+    ease-in-out
+    2.6s
+    infinite;
+}
+
+.escolar-brisa-cercana-izquierda {
+  animation:
+    escolar-brisa-cercana-izquierda
+    7s
+    ease-in-out
+    2.6s
+    infinite;
+}
+
+.escolar-brisa-cercana-derecha {
+  animation:
+    escolar-brisa-cercana-derecha
+    7.5s
+    ease-in-out
+    2.7s
+    infinite;
+}
+
+/* ==========================================================
+   KEYFRAMES DE BRISA
+========================================================== */
+
+@keyframes escolar-brisa-fondo-izquierda {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(5px, -7px, 0)
+      rotate(0.8deg);
+  }
+}
+
+@keyframes escolar-brisa-fondo-derecha {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(-6px, -8px, 0)
+      rotate(-0.8deg);
+  }
+}
+
+@keyframes escolar-brisa-superior-izquierda {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(8px, 5px, 0)
+      rotate(1.8deg);
+  }
+}
+
+@keyframes escolar-brisa-superior-derecha {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(-8px, 6px, 0)
+      rotate(-1.7deg);
+  }
+}
+
+@keyframes escolar-brisa-lateral-alta-izquierda {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(10px, -7px, 0)
+      rotate(2.2deg);
+  }
+}
+
+@keyframes escolar-brisa-lateral-alta-derecha {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(-10px, -6px, 0)
+      rotate(-2deg);
+  }
+}
+
+@keyframes escolar-brisa-media-izquierda {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(8px, -10px, 0)
+      rotate(1.8deg);
+  }
+}
+
+@keyframes escolar-brisa-media-derecha {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(-8px, 9px, 0)
+      rotate(-1.6deg);
+  }
+}
+
+@keyframes escolar-brisa-flotante-izquierda {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(9px, -13px, 0)
+      rotate(2.4deg);
+  }
+}
+
+@keyframes escolar-brisa-flotante-derecha {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(-10px, -11px, 0)
+      rotate(-2.2deg);
+  }
+}
+
+@keyframes escolar-brisa-acento-izquierda {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(6px, -8px, 0)
+      rotate(1.7deg);
+  }
+}
+
+@keyframes escolar-brisa-acento-derecha {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(-6px, 8px, 0)
+      rotate(-1.7deg);
+  }
+}
+
+@keyframes escolar-brisa-frontal-izquierda {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(11px, -9px, 0)
+      rotate(2.6deg);
+  }
+}
+
+@keyframes escolar-brisa-frontal-derecha {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(-11px, -8px, 0)
+      rotate(-2.4deg);
+  }
+}
+
+@keyframes escolar-brisa-cercana-izquierda {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(14px, -11px, 0)
+      rotate(3deg);
+  }
+}
+
+@keyframes escolar-brisa-cercana-derecha {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(-14px, -10px, 0)
+      rotate(-2.8deg);
+  }
+}
+
+/* ==========================================================
+   BASE DE ÓRBITAS
+========================================================== */
+
+.escolar-orbita-base {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 100%;
+  height: 100%;
+
+  transform-origin: center center;
+
+  will-change: transform;
+}
+
+.escolar-orbita-compensacion {
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  transform:
+    translate(-50%, -50%);
+
+  transform-origin: center center;
+
+  will-change: transform;
+}
+
+/* ==========================================================
+   ÓRBITA EXTERIOR
+   CUADERNO
+========================================================== */
+
+.escolar-orbita-cuaderno {
+  animation:
+    escolar-giro-cuaderno
+    40s
+    linear
+    infinite;
+}
+
+.escolar-compensacion-cuaderno {
+  animation:
+    escolar-compensar-cuaderno
+    40s
+    linear
+    infinite;
+}
+
+@keyframes escolar-giro-cuaderno {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(-58deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(302deg);
+  }
+}
+
+@keyframes escolar-compensar-cuaderno {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(58deg)
+      rotate(-10deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-302deg)
+      rotate(-10deg);
+  }
+}
+
+/* ==========================================================
+   ÓRBITA EXTERIOR
+   RESALTADOR
+========================================================== */
+
+.escolar-orbita-resaltador {
+  animation:
+    escolar-giro-resaltador
+    35s
+    linear
+    infinite;
+}
+
+.escolar-compensacion-resaltador {
+  animation:
+    escolar-compensar-resaltador
+    35s
+    linear
+    infinite;
+}
+
+@keyframes escolar-giro-resaltador {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(20deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(380deg);
+  }
+}
+
+@keyframes escolar-compensar-resaltador {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(-20deg)
+      rotate(12deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-380deg)
+      rotate(12deg);
+  }
+}
+
+/* ==========================================================
+   ÓRBITA EXTERIOR
+   GOMA
+========================================================== */
+
+.escolar-orbita-goma {
+  animation:
+    escolar-giro-goma
+    44s
+    linear
+    infinite;
+}
+
+.escolar-compensacion-goma {
+  animation:
+    escolar-compensar-goma
+    44s
+    linear
+    infinite;
+}
+
+@keyframes escolar-giro-goma {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(92deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(452deg);
+  }
+}
+
+@keyframes escolar-compensar-goma {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(-92deg)
+      rotate(8deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-452deg)
+      rotate(8deg);
+  }
+}
+
+/* ==========================================================
+   ÓRBITA EXTERIOR
+   REGLA
+========================================================== */
+
+.escolar-orbita-regla {
+  animation:
+    escolar-giro-regla
+    48s
+    linear
+    infinite;
+}
+
+.escolar-compensacion-regla {
+  animation:
+    escolar-compensar-regla
+    48s
+    linear
+    infinite;
+}
+
+@keyframes escolar-giro-regla {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(148deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(508deg);
+  }
+}
+
+@keyframes escolar-compensar-regla {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(-148deg)
+      rotate(-10deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-508deg)
+      rotate(-10deg);
+  }
+}
+
+/* ==========================================================
+   ÓRBITA EXTERIOR
+   LÁPIZ
+========================================================== */
+
+.escolar-orbita-lapiz {
+  animation:
+    escolar-giro-lapiz
+    42s
+    linear
+    infinite;
+}
+
+.escolar-compensacion-lapiz {
+  animation:
+    escolar-compensar-lapiz
+    42s
+    linear
+    infinite;
+}
+
+@keyframes escolar-giro-lapiz {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(218deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(578deg);
+  }
+}
+
+@keyframes escolar-compensar-lapiz {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(-218deg)
+      rotate(-35deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-578deg)
+      rotate(-35deg);
+  }
+}
+
+/* ==========================================================
+   ÓRBITA INTERIOR
+   CUADERNO
+========================================================== */
+
+.escolar-orbita-cuaderno-2 {
+  animation:
+    escolar-giro-cuaderno-2
+    54s
+    linear
+    infinite;
+}
+
+.escolar-compensacion-cuaderno-2 {
+  animation:
+    escolar-compensar-cuaderno-2
+    54s
+    linear
+    infinite;
+}
+
+@keyframes escolar-giro-cuaderno-2 {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(12deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-348deg);
+  }
+}
+
+@keyframes escolar-compensar-cuaderno-2 {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(-12deg)
+      rotate(8deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(348deg)
+      rotate(8deg);
+  }
+}
+
+/* ==========================================================
+   ÓRBITA INTERIOR
+   RESALTADOR
+========================================================== */
+
+.escolar-orbita-resaltador-2 {
+  animation:
+    escolar-giro-resaltador-2
+    47s
+    linear
+    infinite;
+}
+
+.escolar-compensacion-resaltador-2 {
+  animation:
+    escolar-compensar-resaltador-2
+    47s
+    linear
+    infinite;
+}
+
+@keyframes escolar-giro-resaltador-2 {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(78deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-282deg);
+  }
+}
+
+@keyframes escolar-compensar-resaltador-2 {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(-78deg)
+      rotate(-12deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(282deg)
+      rotate(-12deg);
+  }
+}
+
+/* ==========================================================
+   ÓRBITA INTERIOR
+   GOMA
+========================================================== */
+
+.escolar-orbita-goma-2 {
+  animation:
+    escolar-giro-goma-2
+    60s
+    linear
+    infinite;
+}
+
+.escolar-compensacion-goma-2 {
+  animation:
+    escolar-compensar-goma-2
+    60s
+    linear
+    infinite;
+}
+
+@keyframes escolar-giro-goma-2 {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(145deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-215deg);
+  }
+}
+
+@keyframes escolar-compensar-goma-2 {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(-145deg)
+      rotate(4deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(215deg)
+      rotate(4deg);
+  }
+}
+
+/* ==========================================================
+   ÓRBITA INTERIOR
+   REGLA
+========================================================== */
+
+.escolar-orbita-regla-2 {
+  animation:
+    escolar-giro-regla-2
+    66s
+    linear
+    infinite;
+}
+
+.escolar-compensacion-regla-2 {
+  animation:
+    escolar-compensar-regla-2
+    66s
+    linear
+    infinite;
+}
+
+@keyframes escolar-giro-regla-2 {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(220deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-140deg);
+  }
+}
+
+@keyframes escolar-compensar-regla-2 {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(-220deg)
+      rotate(12deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(140deg)
+      rotate(12deg);
+  }
+}
+
+/* ==========================================================
+   ÓRBITA INTERIOR
+   LÁPIZ
+========================================================== */
+
+.escolar-orbita-lapiz-2 {
+  animation:
+    escolar-giro-lapiz-2
+    51s
+    linear
+    infinite;
+}
+
+.escolar-compensacion-lapiz-2 {
+  animation:
+    escolar-compensar-lapiz-2
+    51s
+    linear
+    infinite;
+}
+
+@keyframes escolar-giro-lapiz-2 {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(292deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-68deg);
+  }
+}
+
+@keyframes escolar-compensar-lapiz-2 {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(-292deg)
+      rotate(-30deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(68deg)
+      rotate(-30deg);
+  }
+}
+
+/* ==========================================================
+   AVIÓN DE PAPEL
+========================================================== */
+
+.escolar-avion-con-rastro {
+  opacity: 0;
+
+  animation:
+    escolar-recorrido-avion
+    24s
+    ease-in-out
+    infinite;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+@keyframes escolar-recorrido-avion {
+  0%,
+  7% {
+    opacity: 0;
+
+    transform:
+      translate3d(-220px, 58px, 0)
+      rotate(3deg);
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  24% {
+    opacity: 1;
+
+    transform:
+      translate3d(27vw, -10px, 0)
+      rotate(-2deg);
+  }
+
+  38% {
+    opacity: 1;
+
+    transform:
+      translate3d(56vw, 16px, 0)
+      rotate(2deg);
+  }
+
+  47% {
+    opacity: 0.95;
+
+    transform:
+      translate3d(82vw, -18px, 0)
+      rotate(-3deg);
+  }
+
+  53% {
+    opacity: 0;
+
+    transform:
+      translate3d(110vw, -48px, 0)
+      rotate(-7deg);
+  }
+
+  54%,
+  100% {
+    opacity: 0;
+
+    transform:
+      translate3d(110vw, -48px, 0)
+      rotate(-7deg);
+  }
+}
+
+/* ==========================================================
+   AVIÓN
+========================================================== */
+
+.escolar-avion {
+  position: absolute;
+
+  left: 190px;
+  top: 11px;
+
+  transform-origin: center center;
+
+  animation:
+    escolar-balanceo-avion
+    3.4s
+    ease-in-out
+    infinite;
+
+  will-change: transform;
+}
+
+@keyframes escolar-balanceo-avion {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(3deg);
+  }
+
+  50% {
+    transform:
+      translateY(-5px)
+      rotate(-3deg);
+  }
+}
+
+/* ==========================================================
+   RASTRO DEL AVIÓN
+========================================================== */
+
+.escolar-rastro-avion {
+  pointer-events: none;
+
+  opacity: 0;
+
+  animation:
+    escolar-opacidad-rastro
+    24s
+    linear
+    infinite;
+
+  will-change: opacity;
+}
+
+.escolar-rastro-linea {
+  fill: none;
+
+  stroke-dasharray: 8 10;
+  stroke-dashoffset: 260;
+
+  opacity: 0;
+
+  animation:
+    escolar-rastro-curvo
+    24s
+    linear
+    infinite;
+
+  will-change:
+    stroke-dashoffset,
+    opacity;
+}
+
+@keyframes escolar-rastro-curvo {
+  0%,
+  8% {
+    opacity: 0;
+    stroke-dashoffset: 300;
+  }
+
+  11% {
+    opacity: 0.15;
+    stroke-dashoffset: 270;
+  }
+
+  16% {
+    opacity: 0.55;
+    stroke-dashoffset: 220;
+  }
+
+  23% {
+    opacity: 0.88;
+    stroke-dashoffset: 160;
+  }
+
+  31% {
+    opacity: 0.92;
+    stroke-dashoffset: 90;
+  }
+
+  39% {
+    opacity: 0.9;
+    stroke-dashoffset: 0;
+  }
+
+  43% {
+    opacity: 0.82;
+    stroke-dashoffset: -20;
+  }
+
+  46% {
+    opacity: 0.65;
+    stroke-dashoffset: -55;
+  }
+
+  49% {
+    opacity: 0.42;
+    stroke-dashoffset: -105;
+  }
+
+  51% {
+    opacity: 0.22;
+    stroke-dashoffset: -165;
+  }
+
+  53% {
+    opacity: 0;
+    stroke-dashoffset: -260;
+  }
+
+  54%,
+  100% {
+    opacity: 0;
+    stroke-dashoffset: -260;
+  }
+}
+
+@keyframes escolar-opacidad-rastro {
+  0%,
+  8% {
+    opacity: 0;
+  }
+
+  11% {
+    opacity: 0.4;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  39% {
+    opacity: 1;
+  }
+
+  44% {
+    opacity: 0.85;
+  }
+
+  48% {
+    opacity: 0.62;
+  }
+
+  51% {
+    opacity: 0.3;
+  }
+
+  53% {
+    opacity: 0;
+  }
+
+  54%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ==========================================================
+   FOQUITO
+========================================================== */
+
+.escolar-foquito {
+  transform-origin: center;
+
+  animation:
+    escolar-idea-brilla
+    5s
+    ease-in-out
+    infinite;
+}
+
+@keyframes escolar-idea-brilla {
+  0%,
+  100% {
+    transform:
+      scale(0.96)
+      rotate(-2deg);
+
+    filter:
+      drop-shadow(
+        0 0 0 rgba(232, 201, 91, 0)
+      );
+  }
+
+  45% {
+    transform:
+      scale(1.04)
+      rotate(2deg);
+
+    filter:
+      drop-shadow(
+        0 0 10px rgba(232, 201, 91, 0.2)
+      );
+  }
+
+  55% {
+    transform:
+      scale(1.06)
+      rotate(0deg);
+
+    filter:
+      drop-shadow(
+        0 0 16px rgba(232, 201, 91, 0.28)
+      );
+  }
+}
+
+/* ==========================================================
+   ESTRELLAS
+========================================================== */
+
+.escolar-estrella {
+  transform-origin: center;
+}
+
+.escolar-estrella-1 {
+  animation:
+    escolar-estrella
+    4.8s
+    ease-in-out
+    infinite;
+}
+
+.escolar-estrella-2 {
+  animation:
+    escolar-estrella
+    5.8s
+    ease-in-out
+    1.5s
+    infinite;
+}
+
+.escolar-estrella-3 {
+  animation:
+    escolar-estrella
+    6.5s
+    ease-in-out
+    0.8s
+    infinite;
+}
+
+@keyframes escolar-estrella {
+  0%,
+  100% {
+    opacity: 0.25;
+
+    transform:
+      scale(0.75)
+      rotate(0deg);
+  }
+
+  50% {
+    opacity: 0.9;
+
+    transform:
+      scale(1.1)
+      rotate(10deg);
+  }
+}
+
+/* ==========================================================
+   TEXTO MANUSCRITO
+========================================================== */
+
+.escolar-texto-manuscrito {
+  font-family:
+    "Comic Sans MS",
+    "Bradley Hand",
+    cursive;
+
+  font-weight: 400;
+}
+
+/* ==========================================================
+   INDICADOR DE SCROLL
+========================================================== */
+
+.escolar-indicador-scroll {
+  animation:
+    escolar-indicador
+    3s
+    ease-in-out
+    infinite;
+}
+
+.escolar-punto-scroll {
+  animation:
+    escolar-punto-scroll
+    2s
+    ease-in-out
+    infinite;
+}
+
+@keyframes escolar-indicador {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes escolar-punto-scroll {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(11px);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================
+   REDUCCIÓN DE MOVIMIENTO
+   ACCESIBILIDAD
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .escolar-crecimiento,
+  .escolar-brisa,
+  .escolar-luz-selva,
+  .escolar-portada-selva,
+
+  .escolar-orbita-cuaderno,
+  .escolar-compensacion-cuaderno,
+
+  .escolar-orbita-resaltador,
+  .escolar-compensacion-resaltador,
+
+  .escolar-orbita-goma,
+  .escolar-compensacion-goma,
+
+  .escolar-orbita-regla,
+  .escolar-compensacion-regla,
+
+  .escolar-orbita-lapiz,
+  .escolar-compensacion-lapiz,
+
+  .escolar-orbita-cuaderno-2,
+  .escolar-compensacion-cuaderno-2,
+
+  .escolar-orbita-resaltador-2,
+  .escolar-compensacion-resaltador-2,
+
+  .escolar-orbita-goma-2,
+  .escolar-compensacion-goma-2,
+
+  .escolar-orbita-regla-2,
+  .escolar-compensacion-regla-2,
+
+  .escolar-orbita-lapiz-2,
+  .escolar-compensacion-lapiz-2,
+
+  .escolar-avion-con-rastro,
+  .escolar-avion,
+  .escolar-rastro-avion,
+  .escolar-rastro-linea,
+
+  .escolar-foquito,
+  .escolar-estrella,
+
+  .escolar-indicador-scroll,
+  .escolar-punto-scroll {
+    animation: none !important;
+  }
+
+  .escolar-selva-hojas {
+    transform: none !important;
+  }
+
+  .escolar-crecimiento {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .escolar-brisa {
+    transform: none !important;
+  }
+
+  .escolar-vegetacion-sale {
+    opacity: 1 !important;
+  }
+
+  .escolar-vegetacion-profunda,
+  .escolar-vegetacion-frontal,
+  .escolar-vegetacion-tardia {
+    filter: none !important;
+  }
+
+  .escolar-portada-selva {
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  .escolar-avion-con-rastro {
+    display: none !important;
+  }
+}

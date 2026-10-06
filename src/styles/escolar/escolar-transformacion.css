@@ -1,0 +1,735 @@
+/* ============================================================
+   ESCOLAR — TRANSFORMACIÓN DE KIRA
+============================================================ */
+
+.escolar-transformacion {
+  position: relative;
+  z-index: 28;
+
+  width: 100%;
+  min-height: 190vh;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f4f0df 0%,
+      #f4f0df 18%,
+      #eef0df 54%,
+      #dfe7d3 100%
+    );
+}
+
+/* ============================================================
+   ESCENA FIJA
+============================================================ */
+
+.escolar-transformacion-fija {
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  padding:
+    100px
+    clamp(24px, 6vw, 84px)
+    80px;
+
+  isolation: isolate;
+}
+
+
+/* ============================================================
+   AMBIENTE
+============================================================ */
+
+.escolar-transformacion-ambiente {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  z-index: -2;
+
+  width: min(1050px, 85vw);
+  height: min(720px, 72vh);
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.76) 0%,
+      rgba(255, 255, 255, 0.42) 36%,
+      rgba(255, 255, 255, 0.12) 63%,
+      rgba(255, 255, 255, 0) 78%
+    );
+
+  filter: blur(32px);
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   CONTENIDO
+============================================================ */
+
+.escolar-transformacion-contenido {
+  position: relative;
+
+  z-index: 20;
+
+  width: min(610px, 48vw);
+
+  margin-left: max(
+    0px,
+    calc((100vw - 1280px) / 2)
+  );
+}
+
+
+/* ============================================================
+   ETIQUETA
+============================================================ */
+
+.escolar-transformacion-etiqueta {
+  margin: 0 0 16px;
+
+  color: #66775d;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.24em;
+
+  text-transform: uppercase;
+}
+
+
+/* ============================================================
+   TÍTULO
+============================================================ */
+
+.escolar-transformacion-titulo {
+  margin: 0;
+
+  max-width: 600px;
+
+  color: #20231f;
+
+  font-size: clamp(52px, 6vw, 92px);
+  font-weight: 600;
+
+  line-height: 0.94;
+
+  letter-spacing: -0.065em;
+}
+
+
+.escolar-transformacion-titulo span {
+  display: block;
+
+  margin-top: 8px;
+
+  color: #496a43;
+}
+
+
+/* ============================================================
+   DESCRIPCIÓN
+============================================================ */
+
+.escolar-transformacion-descripcion {
+  max-width: 430px;
+
+  margin: 26px 0 0;
+
+  color: rgba(32, 35, 31, 0.58);
+
+  font-size: clamp(15px, 1.4vw, 18px);
+
+  line-height: 1.65;
+
+  letter-spacing: -0.015em;
+}
+
+
+/* ============================================================
+   CONTENEDOR DE KIRA
+============================================================ */
+
+.escolar-transformacion-kira {
+  position: absolute;
+
+  right: clamp(70px, 9vw, 160px);
+  top: 50%;
+
+  z-index: 30;
+
+  width: clamp(330px, 31vw, 500px);
+  height: clamp(430px, 39vw, 610px);
+
+  transform: translateY(-48%);
+
+  pointer-events: none;
+  user-select: none;
+}
+
+
+/* ============================================================
+   KIRA NORMAL
+============================================================ */
+
+.escolar-transformacion-kira-normal {
+  position: absolute;
+
+  inset: 0;
+
+  transform-origin: center center;
+
+  will-change:
+    transform,
+    opacity;
+
+  filter:
+    drop-shadow(
+      0 28px 32px rgba(32, 35, 31, 0.13)
+    );
+}
+
+
+/* ============================================================
+   KIRA LLAVERO
+============================================================ */
+
+.escolar-transformacion-kira-llavero {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 82%;
+  height: 82%;
+
+  transform-origin: center center;
+
+  margin-left: -41%;
+  margin-top: -41%;
+
+  will-change:
+    transform,
+    opacity;
+
+  filter:
+    drop-shadow(
+      0 24px 28px rgba(32, 35, 31, 0.15)
+    );
+}
+
+
+/* ============================================================
+   DECORACIÓN
+============================================================ */
+
+.escolar-transformacion-decoracion {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 8;
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   ESTRELLAS
+============================================================ */
+
+.escolar-transformacion-estrella {
+  position: absolute;
+
+  color: #e8c95b;
+
+  line-height: 1;
+
+  opacity: 0.76;
+
+  animation:
+    escolar-transformacion-estrella
+    4.8s
+    ease-in-out
+    infinite;
+}
+
+
+.escolar-transformacion-estrella-1 {
+  left: 11%;
+  top: 23%;
+
+  font-size: 22px;
+}
+
+
+.escolar-transformacion-estrella-2 {
+  right: 12%;
+  bottom: 26%;
+
+  font-size: 15px;
+
+  animation-delay: -2.2s;
+}
+
+
+/* ============================================================
+   PUNTOS
+============================================================ */
+
+.escolar-transformacion-punto {
+  position: absolute;
+
+  display: block;
+
+  border-radius: 999px;
+}
+
+
+.escolar-transformacion-punto-1 {
+  left: 44%;
+  top: 20%;
+
+  width: 8px;
+  height: 8px;
+
+  background: #e98b72;
+
+  opacity: 0.48;
+}
+
+
+.escolar-transformacion-punto-2 {
+  right: 9%;
+  top: 36%;
+
+  width: 6px;
+  height: 6px;
+
+  background: #496a43;
+
+  opacity: 0.36;
+}
+
+
+/* ============================================================
+   TRAZOS
+============================================================ */
+
+.escolar-transformacion-trazo {
+  position: absolute;
+
+  display: block;
+
+  width: 48px;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: rgba(73, 106, 67, 0.23);
+}
+
+
+.escolar-transformacion-trazo-1 {
+  left: 39%;
+  bottom: 25%;
+
+  transform: rotate(-32deg);
+}
+
+
+.escolar-transformacion-trazo-2 {
+  right: 28%;
+  top: 21%;
+
+  width: 32px;
+
+  transform: rotate(24deg);
+}
+
+
+/* ============================================================
+   INDICADOR
+============================================================ */
+
+.escolar-transformacion-indicador {
+  position: absolute;
+
+  left: 50%;
+  bottom: 28px;
+
+  z-index: 40;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 9px;
+
+  transform: translateX(-50%);
+
+  pointer-events: none;
+}
+
+
+.escolar-transformacion-indicador-linea {
+  display: block;
+
+  width: 1px;
+  height: 36px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(73, 106, 67, 0),
+      rgba(73, 106, 67, 0.52)
+    );
+
+  transform-origin: top center;
+
+  animation:
+    escolar-transformacion-linea
+    2.2s
+    ease-in-out
+    infinite;
+}
+
+
+.escolar-transformacion-indicador-texto {
+  color: rgba(32, 35, 31, 0.38);
+
+  font-size: 8px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+}
+
+
+/* ============================================================
+   ANIMACIONES
+============================================================ */
+
+@keyframes escolar-transformacion-estrella {
+  0%,
+  100% {
+    opacity: 0.38;
+
+    transform:
+      scale(0.9)
+      rotate(0deg);
+  }
+
+  50% {
+    opacity: 0.9;
+
+    transform:
+      scale(1.12)
+      rotate(8deg);
+  }
+}
+
+
+@keyframes escolar-transformacion-linea {
+  0%,
+  100% {
+    opacity: 0.28;
+
+    transform:
+      scaleY(0.72);
+  }
+
+  50% {
+    opacity: 0.72;
+
+    transform:
+      scaleY(1);
+  }
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 980px) {
+  .escolar-transformacion {
+    min-height: 145vh;
+  }
+
+
+  .escolar-transformacion-fija {
+    padding:
+      90px
+      36px
+      70px;
+  }
+
+
+  .escolar-transformacion-contenido {
+    width: 52vw;
+    margin-left: 0;
+  }
+
+
+  .escolar-transformacion-titulo {
+    font-size: clamp(48px, 7vw, 72px);
+  }
+
+
+  .escolar-transformacion-kira {
+    right: -5px;
+
+    width: 360px;
+    height: 470px;
+  }
+
+
+  .escolar-transformacion-estrella-2 {
+    right: 5%;
+  }
+
+
+  .escolar-transformacion-trazo-2 {
+    right: 23%;
+  }
+}
+
+
+/* ============================================================
+   MÓVIL
+============================================================ */
+
+@media (max-width: 640px) {
+  .escolar-transformacion {
+    min-height: 155vh;
+  }
+
+
+  .escolar-transformacion-fija {
+    height: 100svh;
+
+    display: block;
+
+    padding:
+      84px
+      18px
+      50px;
+  }
+
+
+  /* ========================================================
+     TEXTO
+  ======================================================== */
+
+  .escolar-transformacion-contenido {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+
+    text-align: center;
+  }
+
+
+  .escolar-transformacion-etiqueta {
+    margin-bottom: 13px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.2em;
+  }
+
+
+  .escolar-transformacion-titulo {
+    max-width: 360px;
+
+    margin-inline: auto;
+
+    font-size: clamp(42px, 12.8vw, 56px);
+
+    line-height: 0.95;
+  }
+
+
+  .escolar-transformacion-titulo span {
+    margin-top: 5px;
+  }
+
+
+  .escolar-transformacion-descripcion {
+    max-width: 300px;
+
+    margin:
+      17px
+      auto
+      0;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+  }
+
+
+  /* ========================================================
+     KIRA
+  ======================================================== */
+
+  .escolar-transformacion-kira {
+    left: 50%;
+    right: auto;
+
+    top: auto;
+    bottom: 36px;
+
+    width: 260px;
+    height: 330px;
+
+    transform: translateX(-50%);
+  }
+
+
+  /* ========================================================
+     DECORACIÓN
+  ======================================================== */
+
+  .escolar-transformacion-estrella-1 {
+    left: 8%;
+    top: 35%;
+
+    font-size: 15px;
+  }
+
+
+  .escolar-transformacion-estrella-2 {
+    right: 8%;
+    bottom: 30%;
+
+    font-size: 12px;
+  }
+
+
+  .escolar-transformacion-punto-1 {
+    left: 11%;
+    top: 25%;
+  }
+
+
+  .escolar-transformacion-punto-2 {
+    right: 10%;
+    top: 44%;
+  }
+
+
+  .escolar-transformacion-trazo-1 {
+    left: 8%;
+    bottom: 32%;
+
+    width: 28px;
+  }
+
+
+  .escolar-transformacion-trazo-2 {
+    right: 10%;
+    top: 32%;
+
+    width: 24px;
+  }
+
+
+  /* ========================================================
+     INDICADOR
+  ======================================================== */
+
+  .escolar-transformacion-indicador {
+    bottom: 18px;
+  }
+
+
+  .escolar-transformacion-indicador-linea {
+    height: 26px;
+  }
+
+
+  .escolar-transformacion-indicador-texto {
+    display: none;
+  }
+}
+
+
+/* ============================================================
+   PANTALLAS BAJAS
+============================================================ */
+
+@media (max-height: 720px) and (min-width: 641px) {
+  .escolar-transformacion-fija {
+    padding-top: 70px;
+    padding-bottom: 55px;
+  }
+
+
+  .escolar-transformacion-kira {
+    width: 320px;
+    height: 410px;
+  }
+
+
+  .escolar-transformacion-titulo {
+    font-size: clamp(46px, 5vw, 70px);
+  }
+
+
+  .escolar-transformacion-descripcion {
+    margin-top: 18px;
+  }
+}
+
+
+/* ============================================================
+   REDUCIR MOVIMIENTO
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .escolar-transformacion-estrella,
+  .escolar-transformacion-indicador-linea {
+    animation: none !important;
+  }
+
+
+  .escolar-transformacion-kira-normal,
+  .escolar-transformacion-kira-llavero {
+    transition: none !important;
+  }
+
+
+  .escolar-transformacion-estrella {
+    opacity: 0.65 !important;
+  }
+
+
+  .escolar-transformacion-indicador-linea {
+    opacity: 0.5 !important;
+    transform: none !important;
+  }
+}

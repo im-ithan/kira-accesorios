@@ -1,0 +1,681 @@
+/* =========================================================
+   KIRA — VIAJE
+   DESCANSO VISUAL · COLOMBIA
+
+   Objetivo:
+   - Crear una pausa visual después de preparar la maleta.
+   - La fotografía es la protagonista.
+   - Kira permanece como parte natural de la escena.
+   - El texto acompaña sin competir con la imagen.
+   - No debe sentirse como una agencia de viajes.
+   - La sección NO funciona como un segundo hero.
+   - El final se integra visualmente con Australia.
+   ========================================================= */
+
+
+/* =========================================================
+   1. SECCIÓN
+   ========================================================= */
+
+.viaje-descanso-colombia {
+  position: relative;
+
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  background: #f8f7f3;
+
+  overflow: hidden;
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   2. ESCENA PRINCIPAL
+
+   La altura está controlada para que Colombia funcione
+   como una pausa narrativa y no como un segundo hero.
+   ========================================================= */
+
+.viaje-descanso-colombia__escena {
+  position: relative;
+
+  width: 100%;
+
+  height: clamp(
+    540px,
+    74svh,
+    800px
+  );
+
+  overflow: hidden;
+
+  background: #d8c7a8;
+}
+
+
+/* =========================================================
+   3. IMAGEN
+   ========================================================= */
+
+.viaje-descanso-colombia__imagen {
+  position: absolute !important;
+  inset: 0;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover;
+
+  /*
+    La imagen original deja:
+    - espacio de lectura a la izquierda;
+    - Kira hacia la derecha.
+  */
+  object-position: center center;
+
+  transform: scale(1.01);
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   4. TRANSICIÓN SUPERIOR
+
+   Integra Colombia con el fondo crema proveniente
+   de la experiencia de la maleta.
+   ========================================================= */
+
+.viaje-descanso-colombia__transicion-superior {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: 105px;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(248, 247, 243, 0.94) 0%,
+      rgba(248, 247, 243, 0.50) 28%,
+      rgba(248, 247, 243, 0.12) 65%,
+      rgba(248, 247, 243, 0) 100%
+    );
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   5. CONTRASTE PARA EL TEXTO
+
+   Concentramos el contraste en la izquierda.
+
+   La zona donde está Kira conserva mejor
+   los colores originales de la fotografía.
+   ========================================================= */
+
+.viaje-descanso-colombia__sombra-texto {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(13, 18, 15, 0.54) 0%,
+      rgba(13, 18, 15, 0.39) 22%,
+      rgba(13, 18, 15, 0.16) 43%,
+      rgba(13, 18, 15, 0.04) 57%,
+      rgba(13, 18, 15, 0) 70%
+    ),
+    linear-gradient(
+      to top,
+      rgba(10, 13, 11, 0.15) 0%,
+      rgba(10, 13, 11, 0) 34%
+    );
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   6. TRANSICIÓN INFERIOR · COLOMBIA → AUSTRALIA
+
+   IMPORTANTE:
+
+   Antes terminábamos Colombia en crema.
+   Eso funcionaría si después viniera una sección clara,
+   pero ahora Australia comienza inmediatamente después.
+
+   Por eso usamos un fundido cálido y oscuro.
+
+   Australia continuará este mismo tono desde arriba,
+   haciendo que ambas fotografías se perciban como
+   partes de un mismo recorrido.
+   ========================================================= */
+
+.viaje-descanso-colombia__transicion-inferior {
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 150px;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(41, 35, 27, 0) 0%,
+      rgba(41, 35, 27, 0.05) 25%,
+      rgba(41, 35, 27, 0.15) 52%,
+      rgba(41, 35, 27, 0.32) 76%,
+      rgba(41, 35, 27, 0.48) 100%
+    );
+
+  z-index: 3;
+}
+
+
+/* =========================================================
+   7. CONTENIDO
+   ========================================================= */
+
+.viaje-descanso-colombia__contenido {
+  position: absolute;
+
+  top: 50%;
+  left: max(6.5vw, 64px);
+
+  width: min(
+    510px,
+    39vw
+  );
+
+  transform:
+    translateY(-46%);
+
+  color: #f8f7f3;
+
+  z-index: 4;
+}
+
+
+/* =========================================================
+   8. PEQUEÑA FRASE SUPERIOR
+   ========================================================= */
+
+.viaje-descanso-colombia__antes {
+  margin:
+    0
+    0
+    16px;
+
+  font-size: 0.75rem;
+  font-weight: 650;
+
+  line-height: 1;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color:
+    rgba(
+      248,
+      247,
+      243,
+      0.80
+    );
+}
+
+
+/* =========================================================
+   9. TÍTULO
+   ========================================================= */
+
+.viaje-descanso-colombia__titulo {
+  max-width: 510px;
+
+  margin: 0;
+
+  font-size:
+    clamp(
+      2.7rem,
+      4.5vw,
+      5rem
+    );
+
+  font-weight: 500;
+
+  line-height: 0.96;
+
+  letter-spacing: -0.05em;
+
+  text-wrap: balance;
+
+  color: #f8f7f3;
+
+  text-shadow:
+    0 2px 18px
+      rgba(0, 0, 0, 0.10),
+    0 8px 36px
+      rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   10. SEGUNDA PARTE DEL TÍTULO
+   ========================================================= */
+
+.viaje-descanso-colombia__titulo span {
+  display: block;
+
+  margin-top: 0.08em;
+
+  color: #d9dfa6;
+}
+
+
+/* =========================================================
+   11. TEXTO SECUNDARIO
+   ========================================================= */
+
+.viaje-descanso-colombia__texto {
+  max-width: 390px;
+
+  margin:
+    24px
+    0
+    0;
+
+  font-size:
+    clamp(
+      0.95rem,
+      1.05vw,
+      1.08rem
+    );
+
+  font-weight: 400;
+
+  line-height: 1.6;
+
+  letter-spacing: -0.01em;
+
+  color:
+    rgba(
+      248,
+      247,
+      243,
+      0.86
+    );
+
+  text-shadow:
+    0 2px 14px
+      rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================================================
+   12. ENTRADA SUAVE
+   ========================================================= */
+
+@keyframes viaje-colombia-aparecer {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-46%)
+      translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(-46%)
+      translateY(0);
+  }
+}
+
+
+@keyframes viaje-colombia-imagen {
+  from {
+    transform:
+      scale(1.035);
+  }
+
+  to {
+    transform:
+      scale(1.01);
+  }
+}
+
+
+.viaje-descanso-colombia__contenido {
+  animation:
+    viaje-colombia-aparecer
+    900ms
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    both;
+}
+
+
+.viaje-descanso-colombia__imagen {
+  animation:
+    viaje-colombia-imagen
+    1600ms
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    both;
+}
+
+
+/* =========================================================
+   13. PANTALLAS GRANDES
+   ========================================================= */
+
+@media (min-width: 1600px) {
+  .viaje-descanso-colombia__escena {
+    height: 760px;
+  }
+
+
+  .viaje-descanso-colombia__contenido {
+    left:
+      max(
+        7vw,
+        100px
+      );
+  }
+
+
+  .viaje-descanso-colombia__transicion-inferior {
+    height: 170px;
+  }
+}
+
+
+/* =========================================================
+   14. PANTALLAS MEDIANAS
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .viaje-descanso-colombia__escena {
+    height:
+      clamp(
+        530px,
+        70svh,
+        700px
+      );
+  }
+
+
+  .viaje-descanso-colombia__contenido {
+    left: 48px;
+
+    width:
+      min(
+        470px,
+        46vw
+      );
+  }
+
+
+  .viaje-descanso-colombia__titulo {
+    font-size:
+      clamp(
+        2.6rem,
+        5vw,
+        4.3rem
+      );
+  }
+
+
+  .viaje-descanso-colombia__sombra-texto {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(13, 18, 15, 0.60) 0%,
+        rgba(13, 18, 15, 0.43) 30%,
+        rgba(13, 18, 15, 0.12) 61%,
+        rgba(13, 18, 15, 0) 82%
+      ),
+      linear-gradient(
+        to top,
+        rgba(10, 13, 11, 0.18) 0%,
+        rgba(10, 13, 11, 0) 38%
+      );
+  }
+
+
+  .viaje-descanso-colombia__transicion-inferior {
+    height: 135px;
+  }
+}
+
+
+/* =========================================================
+   15. TABLET
+   ========================================================= */
+
+@media (max-width: 820px) {
+  .viaje-descanso-colombia__escena {
+    height:
+      clamp(
+        560px,
+        74svh,
+        680px
+      );
+  }
+
+
+  .viaje-descanso-colombia__imagen {
+    object-position:
+      62% center;
+  }
+
+
+  .viaje-descanso-colombia__contenido {
+    top: auto;
+
+    right: 32px;
+    bottom: 96px;
+    left: 32px;
+
+    width: auto;
+    max-width: 520px;
+
+    transform: none;
+  }
+
+
+  .viaje-descanso-colombia__sombra-texto {
+    background:
+      linear-gradient(
+        to top,
+        rgba(10, 14, 11, 0.70) 0%,
+        rgba(10, 14, 11, 0.44) 29%,
+        rgba(10, 14, 11, 0.10) 56%,
+        rgba(10, 14, 11, 0) 76%
+      );
+  }
+
+
+  .viaje-descanso-colombia__titulo {
+    max-width: 480px;
+
+    font-size:
+      clamp(
+        2.8rem,
+        8vw,
+        4.4rem
+      );
+  }
+
+
+  .viaje-descanso-colombia__texto {
+    margin-top: 20px;
+  }
+
+
+  .viaje-descanso-colombia__transicion-inferior {
+    height: 125px;
+  }
+
+
+  @keyframes viaje-colombia-aparecer {
+    from {
+      opacity: 0;
+
+      transform:
+        translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+
+      transform:
+        translateY(0);
+    }
+  }
+}
+
+
+/* =========================================================
+   16. MÓVIL
+   ========================================================= */
+
+@media (max-width: 560px) {
+  .viaje-descanso-colombia__escena {
+    height:
+      clamp(
+        540px,
+        76svh,
+        650px
+      );
+  }
+
+
+  .viaje-descanso-colombia__imagen {
+    object-position:
+      64% center;
+  }
+
+
+  .viaje-descanso-colombia__transicion-superior {
+    height: 75px;
+  }
+
+
+  .viaje-descanso-colombia__transicion-inferior {
+    height: 110px;
+  }
+
+
+  .viaje-descanso-colombia__contenido {
+    right: 22px;
+    bottom: 88px;
+    left: 22px;
+  }
+
+
+  .viaje-descanso-colombia__antes {
+    margin-bottom: 12px;
+
+    font-size: 0.68rem;
+
+    letter-spacing: 0.16em;
+  }
+
+
+  .viaje-descanso-colombia__titulo {
+    max-width: 400px;
+
+    font-size:
+      clamp(
+        2.45rem,
+        11vw,
+        3.6rem
+      );
+
+    line-height: 0.96;
+
+    letter-spacing: -0.045em;
+  }
+
+
+  .viaje-descanso-colombia__texto {
+    max-width: 320px;
+
+    margin-top: 18px;
+
+    font-size: 0.92rem;
+
+    line-height: 1.5;
+  }
+}
+
+
+/* =========================================================
+   17. MÓVILES PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 390px) {
+  .viaje-descanso-colombia__escena {
+    height: 550px;
+  }
+
+
+  .viaje-descanso-colombia__contenido {
+    right: 18px;
+    bottom: 82px;
+    left: 18px;
+  }
+
+
+  .viaje-descanso-colombia__titulo {
+    font-size:
+      clamp(
+        2.25rem,
+        11.5vw,
+        3.2rem
+      );
+  }
+}
+
+
+/* =========================================================
+   18. ACCESIBILIDAD · MOVIMIENTO REDUCIDO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .viaje-descanso-colombia__imagen,
+  .viaje-descanso-colombia__contenido {
+    animation: none;
+  }
+
+
+  .viaje-descanso-colombia__imagen {
+    transform: none;
+  }
+}

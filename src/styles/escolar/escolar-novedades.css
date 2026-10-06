@@ -1,0 +1,1347 @@
+/* ============================================================
+   ESCOLAR NOVEDADES
+   Cierre comercial de la página Escolar
+============================================================ */
+
+.escolar-novedades {
+  position: relative;
+  z-index: 30;
+
+  width: 100%;
+  overflow: hidden;
+
+  padding:
+    clamp(110px, 11vw, 170px)
+    clamp(20px, 5vw, 72px)
+    clamp(90px, 9vw, 135px);
+
+  background:
+    radial-gradient(
+      circle at 88% 14%,
+      rgba(232, 201, 91, 0.12),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 8% 70%,
+      rgba(170, 181, 139, 0.14),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #f4f0df 0%,
+      #f8f5e9 48%,
+      #f4f0df 100%
+    );
+}
+
+.escolar-novedades-contenedor {
+  position: relative;
+  z-index: 10;
+
+  width: min(1380px, 100%);
+  margin: 0 auto;
+}
+
+/* ============================================================
+   CABECERA
+============================================================ */
+
+.escolar-novedades-cabecera {
+  position: relative;
+  z-index: 20;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(280px, 0.6fr);
+
+  align-items: end;
+
+  gap:
+    clamp(36px, 7vw, 100px);
+
+  margin-bottom:
+    clamp(48px, 6vw, 78px);
+}
+
+.escolar-novedades-etiqueta {
+  margin:
+    0
+    0
+    14px;
+
+  color: #718067;
+
+  font-size: 0.75rem;
+  font-weight: 760;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+.escolar-novedades-titulo {
+  max-width: 850px;
+
+  margin: 0;
+
+  color: #283329;
+
+  font-size:
+    clamp(2.8rem, 5.7vw, 6rem);
+
+  font-weight: 700;
+
+  line-height: 0.93;
+
+  letter-spacing: -0.06em;
+
+  text-wrap: balance;
+}
+
+.escolar-novedades-titulo span {
+  color: #74805d;
+}
+
+.escolar-novedades-cabecera-derecha {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  padding-bottom: 5px;
+}
+
+.escolar-novedades-descripcion {
+  max-width: 390px;
+
+  margin: 0;
+
+  color:
+    rgba(40, 51, 41, 0.67);
+
+  font-size: 1rem;
+
+  line-height: 1.65;
+}
+
+.escolar-novedades-ver-todo {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 24px;
+
+  padding-bottom: 4px;
+
+  border-bottom:
+    1px solid
+    rgba(73, 106, 67, 0.3);
+
+  color: #496a43;
+
+  font-size: 0.92rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    gap 180ms ease,
+    border-color 180ms ease;
+}
+
+.escolar-novedades-ver-todo:hover {
+  gap: 15px;
+
+  border-color: #496a43;
+}
+
+.escolar-novedades-ver-todo:focus-visible {
+  outline:
+    3px solid
+    rgba(73, 106, 67, 0.3);
+
+  outline-offset: 5px;
+
+  border-radius: 4px;
+}
+
+/* ============================================================
+   COMPOSICIÓN
+============================================================ */
+
+.escolar-novedades-composicion {
+  position: relative;
+  z-index: 20;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.08fr)
+    minmax(0, 0.92fr);
+
+  gap:
+    clamp(18px, 2.2vw, 32px);
+
+  min-height: 760px;
+}
+
+/* ============================================================
+   PRODUCTO PRINCIPAL
+============================================================ */
+
+.escolar-novedades-principal {
+  position: relative;
+  z-index: 10;
+
+  display: block;
+
+  min-height: 760px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(73, 106, 67, 0.08);
+
+  border-radius:
+    clamp(30px, 4vw, 52px);
+
+  background:
+    linear-gradient(
+      145deg,
+      #dfe7d3 0%,
+      #edf0dc 52%,
+      #f3edda 100%
+    );
+
+  color: inherit;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 30px 65px
+    rgba(47, 67, 44, 0.08);
+
+  isolation: isolate;
+
+  transition:
+    transform 320ms ease,
+    box-shadow 320ms ease;
+}
+
+.escolar-novedades-principal:hover {
+  transform:
+    translateY(-5px);
+
+  box-shadow:
+    0 40px 80px
+    rgba(47, 67, 44, 0.12);
+}
+
+.escolar-novedades-principal:focus-visible {
+  outline:
+    3px solid
+    rgba(73, 106, 67, 0.35);
+
+  outline-offset: 5px;
+}
+
+/* ============================================================
+   FONDO DEL PRODUCTO PRINCIPAL
+============================================================ */
+
+.escolar-novedades-principal-fondo {
+  position: absolute;
+  z-index: -1;
+
+  right: -12%;
+  top: 13%;
+
+  width: 68%;
+
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(232, 201, 91, 0.13) 46%,
+      transparent 72%
+    );
+
+  transition:
+    transform 600ms ease;
+}
+
+.escolar-novedades-principal:hover
+  .escolar-novedades-principal-fondo {
+  transform:
+    scale(1.06);
+}
+
+/* ============================================================
+   CONTENIDO PRINCIPAL
+============================================================ */
+
+.escolar-novedades-principal-contenido {
+  position: absolute;
+  z-index: 20;
+
+  left:
+    clamp(28px, 4vw, 58px);
+
+  top:
+    clamp(34px, 5vw, 68px);
+
+  width:
+    min(390px, 55%);
+}
+
+.escolar-novedades-principal-etiqueta {
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 30px;
+
+  padding:
+    0
+    12px;
+
+  margin-bottom: 18px;
+
+  border:
+    1px solid
+    rgba(73, 106, 67, 0.1);
+
+  border-radius: 999px;
+
+  background:
+    rgba(248, 245, 232, 0.7);
+
+  color: #496a43;
+
+  font-size: 0.7rem;
+  font-weight: 750;
+
+  letter-spacing: 0.05em;
+
+  -webkit-backdrop-filter:
+    blur(8px);
+
+  backdrop-filter:
+    blur(8px);
+}
+
+.escolar-novedades-principal-nombre {
+  margin: 0;
+
+  color: #283329;
+
+  font-size:
+    clamp(2.3rem, 4vw, 4.6rem);
+
+  line-height: 0.96;
+
+  letter-spacing: -0.05em;
+}
+
+.escolar-novedades-principal-descripcion {
+  max-width: 350px;
+
+  margin:
+    20px
+    0
+    0;
+
+  color:
+    rgba(40, 51, 41, 0.68);
+
+  font-size: 0.98rem;
+
+  line-height: 1.6;
+}
+
+.escolar-novedades-principal-pie {
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  margin-top: 25px;
+}
+
+.escolar-novedades-principal-precio {
+  color: #496a43;
+
+  font-size: 1.12rem;
+}
+
+.escolar-novedades-principal-enlace {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color:
+    rgba(40, 51, 41, 0.7);
+
+  font-size: 0.84rem;
+
+  font-weight: 650;
+}
+
+/* ============================================================
+   IMAGEN PRINCIPAL
+============================================================ */
+
+.escolar-novedades-principal-imagen {
+  position: absolute;
+  z-index: 10;
+
+  right:
+    clamp(-25px, -2vw, 5px);
+
+  bottom:
+    clamp(25px, 4vw, 55px);
+
+  width:
+    clamp(310px, 38vw, 520px);
+
+  height:
+    clamp(330px, 42vw, 570px);
+
+  transform:
+    rotate(3deg);
+
+  transform-origin:
+    center bottom;
+
+  filter:
+    drop-shadow(
+      0 28px 30px
+      rgba(40, 51, 41, 0.13)
+    );
+
+  transition:
+    transform 420ms
+    cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.escolar-novedades-principal:hover
+  .escolar-novedades-principal-imagen {
+  transform:
+    translateY(-10px)
+    rotate(1deg)
+    scale(1.035);
+}
+
+/* ============================================================
+   ESTRELLAS PRINCIPAL
+============================================================ */
+
+.escolar-novedades-principal-estrella {
+  position: absolute;
+  z-index: 15;
+
+  color: #cba93c;
+
+  pointer-events: none;
+
+  animation:
+    escolar-novedades-estrella
+    3.8s
+    ease-in-out
+    infinite;
+}
+
+.escolar-novedades-principal-estrella-1 {
+  right: 9%;
+  top: 13%;
+
+  font-size: 1.4rem;
+}
+
+.escolar-novedades-principal-estrella-2 {
+  left: 46%;
+  bottom: 13%;
+
+  font-size: 0.85rem;
+
+  animation-delay: 1.2s;
+}
+
+@keyframes escolar-novedades-estrella {
+  0%,
+  100% {
+    opacity: 0.35;
+
+    transform:
+      scale(0.85)
+      rotate(0deg);
+  }
+
+  50% {
+    opacity: 0.9;
+
+    transform:
+      scale(1.12)
+      rotate(12deg);
+  }
+}
+
+/* ============================================================
+   PRODUCTOS SECUNDARIOS
+============================================================ */
+
+.escolar-novedades-secundarios {
+  position: relative;
+  z-index: 10;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  grid-template-rows:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    clamp(16px, 2vw, 25px);
+}
+
+.escolar-novedades-producto {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 360px;
+
+  overflow: hidden;
+
+  padding:
+    clamp(18px, 2vw, 25px);
+
+  border:
+    1px solid
+    rgba(73, 106, 67, 0.08);
+
+  border-radius:
+    clamp(24px, 3vw, 36px);
+
+  background:
+    rgba(255, 255, 255, 0.58);
+
+  color: inherit;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 20px 42px
+    rgba(40, 51, 41, 0.055);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+
+  backdrop-filter:
+    blur(12px);
+
+  transform:
+    rotate(var(--rotacion-novedad));
+
+  animation:
+    escolar-novedades-producto-entrada
+    550ms
+    calc(var(--indice-novedad) * 90ms)
+    ease
+    both;
+
+  transition:
+    transform 260ms ease,
+    background-color 260ms ease,
+    box-shadow 260ms ease;
+}
+
+/*
+   El tercer producto ocupa todo el ancho inferior.
+   Esto rompe la cuadrícula perfecta y hace la composición
+   menos genérica.
+*/
+
+.escolar-novedades-producto:nth-child(3) {
+  grid-column:
+    1 / -1;
+
+  min-height: 335px;
+}
+
+@keyframes escolar-novedades-producto-entrada {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(16px)
+      rotate(var(--rotacion-novedad));
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      rotate(var(--rotacion-novedad));
+  }
+}
+
+.escolar-novedades-producto:hover {
+  z-index: 5;
+
+  transform:
+    translateY(-7px)
+    rotate(0deg);
+
+  background:
+    rgba(255, 255, 255, 0.78);
+
+  box-shadow:
+    0 28px 52px
+    rgba(40, 51, 41, 0.09);
+}
+
+.escolar-novedades-producto:focus-visible {
+  z-index: 6;
+
+  outline:
+    3px solid
+    rgba(73, 106, 67, 0.3);
+
+  outline-offset: 4px;
+}
+
+/* ============================================================
+   ETIQUETA SECUNDARIA
+============================================================ */
+
+.escolar-novedades-producto-etiqueta {
+  position: absolute;
+  z-index: 20;
+
+  left: 18px;
+  top: 17px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 27px;
+
+  padding:
+    0
+    10px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(244, 240, 223, 0.9);
+
+  color: #496a43;
+
+  font-size: 0.66rem;
+  font-weight: 750;
+
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   IMAGEN SECUNDARIA
+============================================================ */
+
+.escolar-novedades-producto-imagen {
+  position: relative;
+
+  width: 100%;
+
+  height:
+    clamp(145px, 15vw, 210px);
+
+  flex: 0 0 auto;
+
+  margin-bottom: 10px;
+
+  transform-origin:
+    center center;
+
+  transition:
+    transform 280ms ease;
+}
+
+.escolar-novedades-producto:hover
+  .escolar-novedades-producto-imagen {
+  transform:
+    translateY(-5px)
+    scale(1.045);
+}
+
+/*
+   El producto inferior tiene más espacio horizontal.
+*/
+
+.escolar-novedades-producto:nth-child(3)
+  .escolar-novedades-producto-imagen {
+  position: absolute;
+
+  right: 3%;
+  top: 50%;
+
+  width: 46%;
+  height: 85%;
+
+  margin: 0;
+
+  transform:
+    translateY(-50%);
+}
+
+.escolar-novedades-producto:nth-child(3):hover
+  .escolar-novedades-producto-imagen {
+  transform:
+    translateY(calc(-50% - 5px))
+    scale(1.04);
+}
+
+/* ============================================================
+   CONTENIDO SECUNDARIO
+============================================================ */
+
+.escolar-novedades-producto-contenido {
+  position: relative;
+  z-index: 10;
+
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.escolar-novedades-producto:nth-child(3)
+  .escolar-novedades-producto-contenido {
+  width: 48%;
+
+  justify-content: center;
+}
+
+.escolar-novedades-producto-nombre {
+  margin: 0;
+
+  color: #283329;
+
+  font-size:
+    clamp(1.15rem, 1.7vw, 1.55rem);
+
+  line-height: 1.05;
+
+  letter-spacing: -0.025em;
+}
+
+.escolar-novedades-producto-descripcion {
+  margin:
+    9px
+    0
+    0;
+
+  color:
+    rgba(40, 51, 41, 0.61);
+
+  font-size: 0.82rem;
+
+  line-height: 1.5;
+}
+
+.escolar-novedades-producto-pie {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-top: 16px;
+}
+
+.escolar-novedades-producto-precio {
+  color: #496a43;
+
+  font-size: 0.94rem;
+}
+
+.escolar-novedades-producto-flecha {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 31px;
+  height: 31px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(73, 106, 67, 0.08);
+
+  color: #496a43;
+
+  font-size: 0.84rem;
+
+  transition:
+    transform 200ms ease,
+    background-color 200ms ease;
+}
+
+.escolar-novedades-producto:hover
+  .escolar-novedades-producto-flecha {
+  transform:
+    translate(2px, -2px);
+
+  background:
+    rgba(73, 106, 67, 0.14);
+}
+
+/* ============================================================
+   DECORACIÓN
+============================================================ */
+
+.escolar-novedades-decoracion {
+  position: absolute;
+  z-index: 1;
+
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.escolar-novedades-forma {
+  position: absolute;
+
+  border-radius: 50%;
+
+  opacity: 0.5;
+
+  pointer-events: none;
+}
+
+.escolar-novedades-forma-1 {
+  left: -90px;
+  top: 15%;
+
+  width: 250px;
+  height: 250px;
+
+  background:
+    rgba(170, 181, 139, 0.12);
+}
+
+.escolar-novedades-forma-2 {
+  right: -100px;
+  bottom: -60px;
+
+  width: 310px;
+  height: 310px;
+
+  background:
+    rgba(232, 201, 91, 0.1);
+}
+
+.escolar-novedades-punto {
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #e98b72;
+
+  opacity: 0.5;
+}
+
+.escolar-novedades-punto-1 {
+  left: 47%;
+  top: 8%;
+}
+
+.escolar-novedades-punto-2 {
+  right: 3%;
+  bottom: 18%;
+}
+
+.escolar-novedades-trazo {
+  position: absolute;
+
+  height: 1px;
+
+  background:
+    rgba(73, 106, 67, 0.13);
+}
+
+.escolar-novedades-trazo-1 {
+  left: 45%;
+  top: 4%;
+
+  width: 120px;
+
+  transform:
+    rotate(-18deg);
+}
+
+.escolar-novedades-trazo-2 {
+  right: 4%;
+  bottom: 9%;
+
+  width: 95px;
+
+  transform:
+    rotate(22deg);
+}
+
+/* ============================================================
+   CIERRE FINAL
+============================================================ */
+
+.escolar-novedades-cierre {
+  position: relative;
+  z-index: 20;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(40px, 1fr)
+    auto
+    auto;
+
+  align-items: center;
+
+  gap:
+    clamp(20px, 3vw, 42px);
+
+  margin-top:
+    clamp(65px, 7vw, 95px);
+
+  padding-top: 5px;
+}
+
+.escolar-novedades-cierre-linea {
+  width: 100%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(73, 106, 67, 0.24)
+    );
+}
+
+.escolar-novedades-cierre p {
+  margin: 0;
+
+  color:
+    rgba(40, 51, 41, 0.55);
+
+  font-size: 0.84rem;
+  font-weight: 600;
+
+  letter-spacing: 0.02em;
+}
+
+.escolar-novedades-cierre-enlace {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  color: #496a43;
+
+  font-size: 0.92rem;
+  font-weight: 720;
+
+  text-decoration: none;
+
+  transition:
+    gap 180ms ease;
+}
+
+.escolar-novedades-cierre-enlace:hover {
+  gap: 16px;
+}
+
+.escolar-novedades-cierre-enlace:focus-visible {
+  outline:
+    3px solid
+    rgba(73, 106, 67, 0.3);
+
+  outline-offset: 5px;
+
+  border-radius: 4px;
+}
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 1050px) {
+  .escolar-novedades-cabecera {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(250px, 0.6fr);
+
+    gap: 40px;
+  }
+
+  .escolar-novedades-composicion {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(320px, 0.82fr);
+
+    min-height: 700px;
+  }
+
+  .escolar-novedades-principal {
+    min-height: 700px;
+  }
+
+  .escolar-novedades-principal-contenido {
+    width: 65%;
+  }
+
+  .escolar-novedades-principal-imagen {
+    width: 390px;
+    height: 430px;
+
+    right: -45px;
+  }
+
+  .escolar-novedades-producto {
+    min-height: 330px;
+  }
+}
+
+/* ============================================================
+   TABLET PEQUEÑA
+============================================================ */
+
+@media (max-width: 880px) {
+  .escolar-novedades-cabecera {
+    grid-template-columns: 1fr;
+
+    align-items: start;
+
+    gap: 24px;
+  }
+
+  .escolar-novedades-cabecera-derecha {
+    max-width: 500px;
+  }
+
+  .escolar-novedades-composicion {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+  .escolar-novedades-principal {
+    min-height: 650px;
+  }
+
+  .escolar-novedades-principal-contenido {
+    width: min(410px, 58%);
+  }
+
+  .escolar-novedades-principal-imagen {
+    right: 2%;
+
+    width:
+      min(48vw, 430px);
+
+    height:
+      min(52vw, 470px);
+  }
+
+  .escolar-novedades-secundarios {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    grid-template-rows: auto;
+  }
+
+  .escolar-novedades-producto:nth-child(3) {
+    min-height: 310px;
+  }
+}
+
+/* ============================================================
+   MÓVIL
+============================================================ */
+
+@media (max-width: 680px) {
+  .escolar-novedades {
+    padding:
+      85px
+      18px
+      75px;
+  }
+
+  /* ----------------------------------------------------------
+     CABECERA
+  ---------------------------------------------------------- */
+
+  .escolar-novedades-cabecera {
+    margin-bottom: 38px;
+  }
+
+  .escolar-novedades-titulo {
+    font-size:
+      clamp(2.7rem, 12vw, 4.1rem);
+
+    line-height: 0.95;
+  }
+
+  .escolar-novedades-titulo span {
+    display: block;
+
+    margin-top: 4px;
+  }
+
+  /* ----------------------------------------------------------
+     PRINCIPAL
+  ---------------------------------------------------------- */
+
+  .escolar-novedades-principal {
+    min-height: 660px;
+
+    border-radius: 30px;
+  }
+
+  .escolar-novedades-principal-contenido {
+    position: relative;
+
+    left: auto;
+    top: auto;
+
+    width: auto;
+
+    padding:
+      34px
+      26px
+      0;
+  }
+
+  .escolar-novedades-principal-nombre {
+    font-size:
+      clamp(2.4rem, 11vw, 3.8rem);
+  }
+
+  .escolar-novedades-principal-descripcion {
+    max-width: 420px;
+  }
+
+  .escolar-novedades-principal-imagen {
+    right: 50%;
+    bottom: 20px;
+
+    width:
+      min(82vw, 390px);
+
+    height: 340px;
+
+    transform:
+      translateX(50%)
+      rotate(3deg);
+  }
+
+  .escolar-novedades-principal:hover
+    .escolar-novedades-principal-imagen {
+    transform:
+      translateX(50%)
+      translateY(-7px)
+      rotate(1deg)
+      scale(1.025);
+  }
+
+  /* ----------------------------------------------------------
+     SECUNDARIOS
+  ---------------------------------------------------------- */
+
+  .escolar-novedades-secundarios {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .escolar-novedades-producto {
+    display: grid;
+
+    grid-template-columns:
+      minmax(125px, 0.42fr)
+      minmax(0, 0.58fr);
+
+    align-items: center;
+
+    min-height: 220px;
+
+    padding: 18px;
+
+    border-radius: 26px;
+
+    transform: none;
+  }
+
+  .escolar-novedades-producto:nth-child(3) {
+    grid-column: auto;
+
+    min-height: 220px;
+  }
+
+  .escolar-novedades-producto:hover {
+    transform:
+      translateY(-4px);
+  }
+
+  .escolar-novedades-producto-imagen,
+  .escolar-novedades-producto:nth-child(3)
+    .escolar-novedades-producto-imagen {
+    position: relative;
+
+    left: auto;
+    right: auto;
+    top: auto;
+
+    width: 100%;
+    height: 170px;
+
+    margin: 0;
+
+    transform: none;
+  }
+
+  .escolar-novedades-producto:hover
+    .escolar-novedades-producto-imagen,
+  .escolar-novedades-producto:nth-child(3):hover
+    .escolar-novedades-producto-imagen {
+    transform:
+      translateY(-3px)
+      scale(1.025);
+  }
+
+  .escolar-novedades-producto-contenido,
+  .escolar-novedades-producto:nth-child(3)
+    .escolar-novedades-producto-contenido {
+    width: auto;
+
+    padding-left: 10px;
+  }
+
+  .escolar-novedades-producto-etiqueta {
+    left: 15px;
+    top: 14px;
+  }
+
+  /* ----------------------------------------------------------
+     CIERRE
+  ---------------------------------------------------------- */
+
+  .escolar-novedades-cierre {
+    grid-template-columns: 1fr;
+
+    justify-items: start;
+
+    gap: 13px;
+
+    margin-top: 55px;
+  }
+
+  .escolar-novedades-cierre-linea {
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   MÓVILES PEQUEÑOS
+============================================================ */
+
+@media (max-width: 420px) {
+  .escolar-novedades {
+    padding-inline: 15px;
+  }
+
+  .escolar-novedades-principal {
+    min-height: 625px;
+  }
+
+  .escolar-novedades-principal-contenido {
+    padding:
+      30px
+      21px
+      0;
+  }
+
+  .escolar-novedades-principal-pie {
+    gap: 17px;
+  }
+
+  .escolar-novedades-principal-imagen {
+    width: 310px;
+    height: 305px;
+  }
+
+  .escolar-novedades-producto {
+    grid-template-columns:
+      115px
+      minmax(0, 1fr);
+
+    min-height: 205px;
+
+    padding: 14px;
+  }
+
+  .escolar-novedades-producto:nth-child(3) {
+    min-height: 205px;
+  }
+
+  .escolar-novedades-producto-imagen,
+  .escolar-novedades-producto:nth-child(3)
+    .escolar-novedades-producto-imagen {
+    height: 145px;
+  }
+
+  .escolar-novedades-producto-descripcion {
+    font-size: 0.78rem;
+  }
+}
+
+/* ============================================================
+   MOVIMIENTO REDUCIDO
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .escolar-novedades-principal,
+  .escolar-novedades-principal-fondo,
+  .escolar-novedades-principal-imagen,
+  .escolar-novedades-principal-estrella,
+  .escolar-novedades-producto,
+  .escolar-novedades-producto-imagen,
+  .escolar-novedades-producto-flecha {
+    animation: none;
+
+    transition: none;
+  }
+}

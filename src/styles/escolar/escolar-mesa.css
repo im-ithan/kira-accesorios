@@ -1,0 +1,1856 @@
+/* ==========================================================
+   KIRA ESCOLAR
+   MESA INTERACTIVA
+========================================================== */
+
+.escolar-mesa {
+  position: relative;
+  isolation: isolate;
+
+  width: 100%;
+  min-height: 1280px;
+
+  overflow: clip;
+
+  background:
+    radial-gradient(
+      circle at 18% 18%,
+      rgba(120, 148, 111, 0.17),
+      transparent 31%
+    ),
+    radial-gradient(
+      circle at 82% 72%,
+      rgba(232, 201, 91, 0.11),
+      transparent 31%
+    ),
+    radial-gradient(
+      circle at 50% 55%,
+      rgba(255, 255, 255, 0.42),
+      transparent 43%
+    ),
+    linear-gradient(
+      180deg,
+      #f4f0df 0%,
+      #eef1e4 44%,
+      #e2ead8 100%
+    );
+
+  padding:
+    110px
+    24px
+    150px;
+}
+
+
+/* ==========================================================
+   CONTENEDOR GENERAL
+========================================================== */
+
+.escolar-mesa-contenedor {
+  position: relative;
+  z-index: 10;
+
+  width: min(100%, 1500px);
+
+  margin-inline: auto;
+}
+
+
+/* ==========================================================
+   INTRODUCCIÓN
+========================================================== */
+
+.escolar-mesa-introduccion {
+  position: relative;
+  z-index: 20;
+
+  width: min(100%, 780px);
+
+  margin-inline: auto;
+
+  text-align: center;
+}
+
+
+.escolar-mesa-sobretitulo {
+  margin: 0;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.24em;
+
+  text-transform: uppercase;
+
+  color: #78946f;
+}
+
+
+.escolar-mesa-titulo {
+  margin:
+    14px
+    auto
+    0;
+
+  max-width: 800px;
+
+  font-size: clamp(
+    3rem,
+    6vw,
+    5.8rem
+  );
+
+  font-weight: 650;
+
+  line-height: 0.92;
+
+  letter-spacing: -0.06em;
+
+  color: #20231f;
+}
+
+
+.escolar-mesa-titulo span {
+  display: block;
+
+  color: #496a43;
+}
+
+
+.escolar-mesa-texto {
+  max-width: 580px;
+
+  margin:
+    28px
+    auto
+    0;
+
+  font-size: 18px;
+  line-height: 1.65;
+
+  color: rgba(
+    32,
+    35,
+    31,
+    0.58
+  );
+}
+
+
+/* ==========================================================
+   INDICACIÓN
+========================================================== */
+
+.escolar-mesa-pista {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 32px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  color: rgba(
+    32,
+    35,
+    31,
+    0.48
+  );
+}
+
+
+.escolar-mesa-pista-icono {
+  display: grid;
+
+  width: 32px;
+  height: 32px;
+
+  place-items: center;
+
+  border:
+    1px
+    solid
+    rgba(73, 106, 67, 0.18);
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.38);
+
+  animation:
+    escolar-mesa-flecha-abajo
+    2.2s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes escolar-mesa-flecha-abajo {
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(5px);
+  }
+}
+
+
+/* ==========================================================
+   LUCES AMBIENTALES
+========================================================== */
+
+.escolar-mesa-luz {
+  position: absolute;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  border-radius: 999px;
+
+  filter: blur(110px);
+}
+
+
+.escolar-mesa-luz-izquierda {
+  top: 10%;
+  left: -180px;
+
+  width: 540px;
+  height: 540px;
+
+  background:
+    rgba(91, 127, 80, 0.17);
+}
+
+
+.escolar-mesa-luz-derecha {
+  right: -180px;
+  bottom: 15%;
+
+  width: 520px;
+  height: 520px;
+
+  background:
+    rgba(232, 201, 91, 0.14);
+}
+
+
+.escolar-mesa-luz-central {
+  left: 50%;
+  top: 48%;
+
+  width: 720px;
+  height: 430px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    rgba(255, 255, 255, 0.23);
+
+  filter: blur(130px);
+}
+
+
+/* ==========================================================
+   ESCENA DE LA MESA
+========================================================== */
+
+.escolar-mesa-escena {
+  position: relative;
+  z-index: 10;
+
+  width: min(
+    100%,
+    1300px
+  );
+
+  margin:
+    96px
+    auto
+    0;
+
+  perspective: 1650px;
+}
+
+
+/* ==========================================================
+   SOMBRA GENERAL
+========================================================== */
+
+.escolar-mesa-sombra-exterior {
+  position: absolute;
+
+  z-index: -2;
+
+  left: 6%;
+  right: 6%;
+
+  bottom: -72px;
+
+  height: 145px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(31, 48, 31, 0.22);
+
+  filter: blur(48px);
+
+  transform:
+    scaleX(0.94);
+}
+
+
+/* ==========================================================
+   SUPERFICIE PRINCIPAL
+========================================================== */
+
+.escolar-mesa-superficie {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  height: 720px;
+
+  overflow: visible;
+
+  border:
+    1px
+    solid
+    rgba(255, 255, 255, 0.54);
+
+  border-radius:
+    44px
+    44px
+    30px
+    30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #eadfc6 0%,
+      #dfd1b5 48%,
+      #d4c29f 100%
+    );
+
+  box-shadow:
+    0 46px 90px
+      rgba(46, 61, 42, 0.2),
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.76),
+    inset 0 -30px 50px
+      rgba(117, 92, 57, 0.04);
+
+  transform:
+    rotateX(3deg);
+
+  transform-origin:
+    center bottom;
+}
+
+
+/* ==========================================================
+   TEXTURA
+========================================================== */
+
+.escolar-mesa-textura {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  border-radius: inherit;
+
+  pointer-events: none;
+
+  opacity: 0.34;
+
+  background:
+    repeating-linear-gradient(
+      5deg,
+      transparent 0,
+      transparent 36px,
+      rgba(95, 75, 46, 0.055)
+        37px,
+      transparent 39px
+    );
+}
+
+
+.escolar-mesa-luz-superficie {
+  position: absolute;
+
+  inset:
+    0
+    0
+    auto;
+
+  height: 52%;
+
+  border-radius:
+    44px
+    44px
+    52%
+    52%;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.27),
+      transparent
+    );
+}
+
+
+.escolar-mesa-reflejo-superficie {
+  position: absolute;
+
+  z-index: 1;
+
+  left: 26%;
+  top: 3%;
+
+  width: 46%;
+  height: 36%;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  opacity: 0.46;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(255, 255, 255, 0.34),
+      transparent 68%
+    );
+
+  filter: blur(26px);
+}
+
+
+/* ==========================================================
+   BORDE FRONTAL
+========================================================== */
+
+.escolar-mesa-borde {
+  position: relative;
+
+  z-index: 1;
+
+  width: calc(
+    100% - 34px
+  );
+
+  height: 42px;
+
+  margin:
+    -7px
+    auto
+    0;
+
+  border-radius:
+    0
+    0
+    30px
+    30px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #c7b28a,
+      #a88f68
+    );
+
+  box-shadow:
+    0 26px 44px
+      rgba(38, 51, 35, 0.2),
+    inset 0 1px
+      rgba(255, 255, 255, 0.18);
+}
+
+
+/* ==========================================================
+   PAPEL PRINCIPAL
+========================================================== */
+
+.escolar-mesa-papel {
+  position: absolute;
+
+  z-index: 3;
+
+  left: 41%;
+  top: 28%;
+
+  width: 225px;
+  height: 285px;
+
+  padding:
+    48px
+    28px;
+
+  border-radius: 8px;
+
+  background:
+    #f8f5e9;
+
+  box-shadow:
+    0 16px 34px
+      rgba(56, 48, 38, 0.13);
+
+  transform:
+    rotate(-5deg);
+
+  pointer-events: none;
+}
+
+
+.escolar-mesa-papel::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 28px;
+
+  width: 2px;
+  height: 100%;
+
+  background:
+    rgba(221, 115, 93, 0.11);
+}
+
+
+.escolar-mesa-papel-linea {
+  display: block;
+
+  width: 100%;
+  height: 1px;
+
+  margin-bottom: 22px;
+
+  background:
+    rgba(70, 90, 67, 0.14);
+}
+
+
+.escolar-mesa-papel-garabato {
+  position: absolute;
+
+  right: 22px;
+  bottom: 25px;
+
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+
+  color:
+    rgba(73, 106, 67, 0.45);
+
+  transform:
+    rotate(-7deg);
+}
+
+
+/* ==========================================================
+   NOTAS ADHESIVAS
+========================================================== */
+
+.escolar-mesa-nota {
+  position: absolute;
+
+  z-index: 6;
+
+  display: grid;
+
+  place-items: center;
+
+  width: 112px;
+  height: 88px;
+
+  border-radius: 4px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f5e895,
+      #e9d46d
+    );
+
+  box-shadow:
+    0 10px 20px
+      rgba(66, 57, 38, 0.12);
+
+  pointer-events: none;
+}
+
+
+.escolar-mesa-nota::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+
+  width: 26px;
+  height: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 48%,
+      rgba(183, 157, 67, 0.2) 50%
+    );
+}
+
+
+.escolar-mesa-nota span {
+  font-size: 13px;
+  font-weight: 650;
+  font-style: italic;
+
+  color:
+    rgba(72, 68, 39, 0.6);
+}
+
+
+.escolar-mesa-nota-1 {
+  left: 27%;
+  top: 16%;
+
+  transform:
+    rotate(-7deg);
+}
+
+
+.escolar-mesa-nota-2 {
+  right: 25%;
+  bottom: 18%;
+
+  width: 100px;
+  height: 82px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #dce8cf,
+      #cbdcaf
+    );
+
+  transform:
+    rotate(8deg);
+}
+
+
+.escolar-mesa-nota-3 {
+  right: 35%;
+  top: 7%;
+
+  width: 86px;
+  height: 72px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f3b29f,
+      #e99981
+    );
+
+  transform:
+    rotate(5deg);
+}
+
+
+/* ==========================================================
+   CLIPS
+========================================================== */
+
+.escolar-mesa-clip {
+  position: absolute;
+
+  z-index: 8;
+
+  width: 46px;
+  height: 18px;
+
+  border:
+    3px
+    solid
+    rgba(88, 102, 85, 0.45);
+
+  border-radius: 999px;
+
+  pointer-events: none;
+
+  box-shadow:
+    0 5px 8px
+      rgba(60, 72, 58, 0.08);
+}
+
+
+.escolar-mesa-clip::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 3px 6px;
+
+  border:
+    2px
+    solid
+    rgba(88, 102, 85, 0.27);
+
+  border-radius: 999px;
+}
+
+
+.escolar-mesa-clip-1 {
+  right: 32%;
+  top: 18%;
+
+  transform:
+    rotate(28deg);
+}
+
+
+.escolar-mesa-clip-2 {
+  left: 28%;
+  bottom: 18%;
+
+  transform:
+    rotate(-16deg);
+}
+
+
+.escolar-mesa-clip-3 {
+  right: 8%;
+  bottom: 38%;
+
+  transform:
+    rotate(48deg)
+    scale(0.86);
+}
+
+
+/* ==========================================================
+   CINTA ADHESIVA
+========================================================== */
+
+.escolar-mesa-cinta {
+  position: absolute;
+
+  z-index: 7;
+
+  width: 88px;
+  height: 26px;
+
+  border:
+    1px
+    solid
+    rgba(255, 255, 255, 0.45);
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.48) 0,
+      rgba(255, 255, 255, 0.48) 7px,
+      rgba(236, 227, 196, 0.46) 8px,
+      rgba(236, 227, 196, 0.46) 10px
+    );
+
+  box-shadow:
+    0 4px 9px
+      rgba(61, 61, 49, 0.06);
+
+  pointer-events: none;
+}
+
+
+.escolar-mesa-cinta-1 {
+  left: 44%;
+  top: 12%;
+
+  transform:
+    rotate(-8deg);
+}
+
+
+.escolar-mesa-cinta-2 {
+  right: 19%;
+  bottom: 28%;
+
+  transform:
+    rotate(12deg);
+}
+
+
+/* ==========================================================
+   GARABATOS
+========================================================== */
+
+.escolar-mesa-garabato {
+  position: absolute;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  opacity: 0.3;
+}
+
+
+.escolar-mesa-garabato-circulo {
+  right: 24%;
+  top: 6%;
+
+  width: 165px;
+  height: 110px;
+
+  border:
+    2px
+    dashed
+    rgba(73, 106, 67, 0.4);
+
+  border-radius: 50%;
+
+  transform:
+    rotate(-8deg);
+}
+
+
+.escolar-mesa-garabato-linea {
+  left: 48%;
+  bottom: 11%;
+
+  width: 170px;
+  height: 58px;
+
+  border-bottom:
+    2px
+    dashed
+    rgba(73, 106, 67, 0.34);
+
+  border-radius: 0 0 50% 50%;
+
+  transform:
+    rotate(10deg);
+}
+
+
+.escolar-mesa-garabato-onda {
+  left: 17%;
+  top: 49%;
+
+  width: 120px;
+  height: 40px;
+
+  border-top:
+    2px
+    dashed
+    rgba(73, 106, 67, 0.28);
+
+  border-radius: 50%;
+
+  transform:
+    rotate(-13deg);
+}
+
+
+/* ==========================================================
+   PRODUCTOS INTERACTIVOS
+========================================================== */
+
+.escolar-mesa-objeto {
+  position: absolute;
+
+  z-index: 10;
+
+  display: block;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  outline: none;
+
+  transition:
+    z-index 0s,
+    transform 360ms
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+}
+
+
+.escolar-mesa-objeto:hover,
+.escolar-mesa-objeto:focus-visible {
+  z-index: 50;
+}
+
+
+/* ==========================================================
+   CONTENEDOR DE IMAGE FILL
+========================================================== */
+
+.escolar-mesa-objeto-visual {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  transition:
+    transform 380ms
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    filter 380ms ease;
+
+  filter:
+    drop-shadow(
+      0 14px 12px
+      rgba(39, 42, 34, 0.14)
+    );
+}
+
+
+.escolar-mesa-objeto:hover
+  .escolar-mesa-objeto-visual,
+.escolar-mesa-objeto:focus-visible
+  .escolar-mesa-objeto-visual {
+  transform:
+    translateY(-16px)
+    scale(1.065);
+
+  filter:
+    drop-shadow(
+      0 26px 20px
+      rgba(39, 42, 34, 0.24)
+    );
+}
+
+
+/* ==========================================================
+   POSICIONES DE PRODUCTOS
+========================================================== */
+
+.escolar-mesa-objeto-cuaderno {
+  left: 7%;
+  top: 9%;
+
+  width: 235px;
+  height: 275px;
+
+  transform:
+    rotate(-8deg);
+}
+
+
+.escolar-mesa-objeto-lapiz {
+  left: 31%;
+  bottom: 7%;
+
+  width: 94px;
+  height: 310px;
+
+  transform:
+    rotate(58deg);
+}
+
+
+.escolar-mesa-objeto-resaltador {
+  right: 10%;
+  top: 12%;
+
+  width: 125px;
+  height: 235px;
+
+  transform:
+    rotate(28deg);
+}
+
+
+.escolar-mesa-objeto-goma {
+  right: 13%;
+  bottom: 11%;
+
+  width: 150px;
+  height: 150px;
+
+  transform:
+    rotate(8deg);
+}
+
+
+.escolar-mesa-objeto-regla {
+  left: 7%;
+  bottom: 9%;
+
+  width: 260px;
+  height: 115px;
+
+  transform:
+    rotate(10deg);
+}
+
+
+/* ==========================================================
+   TARJETAS DE INFORMACIÓN
+========================================================== */
+
+.escolar-mesa-tarjeta {
+  position: absolute;
+
+  left: 50%;
+  bottom: calc(
+    100% + 18px
+  );
+
+  width: 225px;
+
+  padding:
+    17px
+    18px;
+
+  border:
+    1px
+    solid
+    rgba(255, 255, 255, 0.58);
+
+  border-radius: 18px;
+
+  background:
+    rgba(
+      248,
+      247,
+      243,
+      0.93
+    );
+
+  box-shadow:
+    0 18px 45px
+      rgba(44, 59, 40, 0.17);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transform:
+    translate(
+      -50%,
+      10px
+    )
+    scale(0.96);
+
+  transition:
+    opacity 240ms ease,
+    transform 340ms
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+
+  backdrop-filter:
+    blur(16px);
+}
+
+
+.escolar-mesa-objeto:hover
+  .escolar-mesa-tarjeta,
+.escolar-mesa-objeto:focus-visible
+  .escolar-mesa-tarjeta {
+  opacity: 1;
+
+  transform:
+    translate(
+      -50%,
+      0
+    )
+    scale(1);
+}
+
+
+.escolar-mesa-tarjeta-nombre {
+  display: block;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  color: #20231f;
+}
+
+
+.escolar-mesa-tarjeta-descripcion {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 12px;
+  line-height: 1.5;
+
+  color:
+    rgba(
+      32,
+      35,
+      31,
+      0.56
+    );
+}
+
+
+.escolar-mesa-tarjeta-enlace {
+  display: block;
+
+  margin-top: 12px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  color: #496a43;
+}
+
+
+/* ==========================================================
+   KIRA TEMPORAL
+========================================================== */
+
+.escolar-mesa-kira {
+  position: absolute;
+
+  z-index: 9;
+
+  left: 59%;
+  top: 25%;
+
+  width: 220px;
+  height: 275px;
+
+  pointer-events: none;
+}
+
+
+.escolar-mesa-kira-temporal {
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border:
+    2px
+    dashed
+    rgba(73, 106, 67, 0.18);
+
+  border-radius: 42%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.28),
+      rgba(255, 255, 255, 0.08)
+    );
+}
+
+
+.escolar-mesa-kira-icono {
+  font-size: 76px;
+}
+
+
+.escolar-mesa-kira-texto {
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  color:
+    rgba(
+      73,
+      106,
+      67,
+      0.48
+    );
+}
+
+
+/* ==========================================================
+   ESTRELLAS
+========================================================== */
+
+.escolar-mesa-estrella {
+  position: absolute;
+
+  z-index: 4;
+
+  pointer-events: none;
+
+  color: #d5b74e;
+
+  text-shadow:
+    0 4px 12px
+    rgba(213, 183, 78, 0.18);
+}
+
+
+.escolar-mesa-estrella-1 {
+  top: 18%;
+  left: 34%;
+
+  font-size: 28px;
+}
+
+
+.escolar-mesa-estrella-2 {
+  right: 35%;
+  bottom: 14%;
+
+  font-size: 20px;
+}
+
+
+.escolar-mesa-estrella-3 {
+  right: 6%;
+  top: 47%;
+
+  font-size: 17px;
+}
+
+
+.escolar-mesa-estrella-4 {
+  left: 20%;
+  bottom: 32%;
+
+  font-size: 15px;
+
+  color: #78946f;
+}
+
+
+/* ==========================================================
+   FLECHA ILUSTRADA
+========================================================== */
+
+.escolar-mesa-flecha {
+  position: absolute;
+
+  z-index: 3;
+
+  right: 27%;
+  bottom: 6%;
+
+  width: 155px;
+
+  color:
+    rgba(
+      73,
+      106,
+      67,
+      0.35
+    );
+
+  pointer-events: none;
+}
+
+
+/* ==========================================================
+   PUNTOS DECORATIVOS
+========================================================== */
+
+.escolar-mesa-puntos {
+  position: absolute;
+
+  z-index: 4;
+
+  display: flex;
+
+  gap: 6px;
+
+  pointer-events: none;
+}
+
+
+.escolar-mesa-puntos span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(73, 106, 67, 0.32);
+}
+
+
+.escolar-mesa-puntos-1 {
+  left: 22%;
+  top: 38%;
+
+  transform:
+    rotate(-12deg);
+}
+
+
+.escolar-mesa-puntos-2 {
+  right: 22%;
+  bottom: 7%;
+
+  transform:
+    rotate(18deg);
+}
+
+
+/* ==========================================================
+   VEGETACIÓN DE LA MESA
+========================================================== */
+
+.escolar-mesa-hoja {
+  position: absolute;
+
+  pointer-events: none;
+
+  z-index: 6;
+
+  will-change:
+    transform;
+}
+
+
+/* ----------------------------------------------------------
+   SUPERIOR IZQUIERDA
+---------------------------------------------------------- */
+
+.escolar-mesa-hoja-superior-izquierda {
+  left: -115px;
+  top: 170px;
+
+  width: 420px;
+  height: 260px;
+
+  transform:
+    rotate(-10deg);
+}
+
+
+/* ----------------------------------------------------------
+   SUPERIOR DERECHA
+---------------------------------------------------------- */
+
+.escolar-mesa-hoja-superior-derecha {
+  right: -88px;
+  top: 210px;
+
+  width: 335px;
+  height: 305px;
+
+  transform:
+    scaleX(-1)
+    rotate(-8deg);
+
+  transform-origin:
+    center center;
+}
+
+
+/* ----------------------------------------------------------
+   INFERIOR IZQUIERDA
+---------------------------------------------------------- */
+
+.escolar-mesa-hoja-inferior-izquierda {
+  left: -95px;
+  bottom: -45px;
+
+  width: 305px;
+  height: 235px;
+
+  transform:
+    rotate(9deg);
+}
+
+
+/* ----------------------------------------------------------
+   INFERIOR DERECHA
+---------------------------------------------------------- */
+
+.escolar-mesa-hoja-inferior-derecha {
+  right: -75px;
+  bottom: -38px;
+
+  width: 315px;
+  height: 235px;
+
+  transform:
+    scaleX(-1)
+    rotate(10deg);
+
+  transform-origin:
+    center center;
+}
+
+
+/* ==========================================================
+   PIE DE LA ESCENA
+========================================================== */
+
+.escolar-mesa-pie {
+  position: relative;
+
+  z-index: 12;
+
+  margin-top: 74px;
+
+  text-align: center;
+}
+
+
+.escolar-mesa-pie p {
+  margin: 0;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  color:
+    rgba(
+      32,
+      35,
+      31,
+      0.55
+    );
+}
+
+
+.escolar-mesa-pie span {
+  color: #78946f;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (
+  max-width: 1024px
+) {
+  .escolar-mesa {
+    min-height: auto;
+
+    padding:
+      90px
+      20px
+      120px;
+  }
+
+
+  .escolar-mesa-escena {
+    margin-top: 80px;
+  }
+
+
+  .escolar-mesa-superficie {
+    height: 630px;
+  }
+
+
+  .escolar-mesa-objeto-cuaderno {
+    width: 190px;
+    height: 225px;
+  }
+
+
+  .escolar-mesa-objeto-lapiz {
+    width: 80px;
+    height: 270px;
+  }
+
+
+  .escolar-mesa-objeto-regla {
+    width: 215px;
+  }
+
+
+  .escolar-mesa-papel {
+    width: 190px;
+    height: 250px;
+  }
+
+
+  .escolar-mesa-kira {
+    width: 180px;
+    height: 230px;
+  }
+
+
+  .escolar-mesa-nota-3,
+  .escolar-mesa-clip-3,
+  .escolar-mesa-garabato-onda {
+    display: none;
+  }
+}
+
+
+/* ==========================================================
+   MÓVIL
+========================================================== */
+
+@media (
+  max-width: 767px
+) {
+  .escolar-mesa {
+    padding:
+      76px
+      16px
+      100px;
+  }
+
+
+  .escolar-mesa-titulo {
+    font-size:
+      clamp(
+        2.7rem,
+        13vw,
+        4rem
+      );
+  }
+
+
+  .escolar-mesa-texto {
+    margin-top: 22px;
+
+    font-size: 16px;
+  }
+
+
+  .escolar-mesa-escena {
+    width: 100%;
+
+    margin-top: 65px;
+  }
+
+
+  .escolar-mesa-superficie {
+    height: 690px;
+
+    border-radius: 28px;
+
+    transform: none;
+  }
+
+
+  .escolar-mesa-borde {
+    height: 25px;
+
+    border-radius:
+      0
+      0
+      22px
+      22px;
+  }
+
+
+  .escolar-mesa-papel {
+    left: 31%;
+    top: 35%;
+
+    width: 145px;
+    height: 200px;
+
+    padding:
+      38px
+      20px;
+  }
+
+
+  /* ========================================================
+     PRODUCTOS MÓVIL
+  ======================================================== */
+
+  .escolar-mesa-objeto-cuaderno {
+    left: 4%;
+    top: 7%;
+
+    width: 140px;
+    height: 165px;
+  }
+
+
+  .escolar-mesa-objeto-lapiz {
+    left: 18%;
+    bottom: 17%;
+
+    width: 68px;
+    height: 225px;
+  }
+
+
+  .escolar-mesa-objeto-resaltador {
+    right: 4%;
+    top: 11%;
+
+    width: 86px;
+    height: 170px;
+  }
+
+
+  .escolar-mesa-objeto-goma {
+    right: 5%;
+    bottom: 8%;
+
+    width: 100px;
+    height: 100px;
+  }
+
+
+  .escolar-mesa-objeto-regla {
+    left: 4%;
+    bottom: 4%;
+
+    width: 160px;
+    height: 75px;
+  }
+
+
+  /* ========================================================
+     KIRA
+  ======================================================== */
+
+  .escolar-mesa-kira {
+    left: 56%;
+    top: 38%;
+
+    width: 125px;
+    height: 170px;
+  }
+
+
+  .escolar-mesa-kira-icono {
+    font-size: 52px;
+  }
+
+
+  /* ========================================================
+     ELEMENTOS DECORATIVOS MÓVIL
+  ======================================================== */
+
+  .escolar-mesa-nota-1 {
+    left: 7%;
+    top: 34%;
+
+    width: 76px;
+    height: 62px;
+  }
+
+
+  .escolar-mesa-nota-2 {
+    right: 5%;
+    bottom: 29%;
+
+    width: 72px;
+    height: 58px;
+  }
+
+
+  .escolar-mesa-nota-3,
+  .escolar-mesa-clip-2,
+  .escolar-mesa-clip-3,
+  .escolar-mesa-cinta-2,
+  .escolar-mesa-garabato-circulo,
+  .escolar-mesa-garabato-onda,
+  .escolar-mesa-puntos-2 {
+    display: none;
+  }
+
+
+  .escolar-mesa-cinta-1 {
+    left: 43%;
+    top: 13%;
+
+    width: 66px;
+  }
+
+
+  .escolar-mesa-clip-1 {
+    right: 24%;
+    top: 27%;
+
+    transform:
+      rotate(28deg)
+      scale(0.78);
+  }
+
+
+  .escolar-mesa-estrella-1 {
+    left: 44%;
+    top: 21%;
+  }
+
+
+  .escolar-mesa-estrella-2 {
+    right: 39%;
+    bottom: 12%;
+  }
+
+
+  .escolar-mesa-estrella-4 {
+    left: 13%;
+    bottom: 31%;
+  }
+
+
+  .escolar-mesa-flecha {
+    right: 22%;
+    bottom: 7%;
+
+    width: 110px;
+  }
+
+
+  .escolar-mesa-tarjeta {
+    display: none;
+  }
+
+
+  /* ========================================================
+     VEGETACIÓN MÓVIL
+  ======================================================== */
+
+  .escolar-mesa-hoja-superior-izquierda {
+    left: -120px;
+    top: 210px;
+
+    width: 260px;
+    height: 180px;
+  }
+
+
+  .escolar-mesa-hoja-superior-derecha {
+    right: -120px;
+    top: 250px;
+
+    width: 240px;
+    height: 200px;
+
+    transform:
+      scaleX(-1)
+      rotate(-8deg);
+
+    transform-origin:
+      center center;
+  }
+
+
+  .escolar-mesa-hoja-inferior-izquierda {
+    left: -120px;
+
+    width: 230px;
+    height: 180px;
+  }
+
+
+  .escolar-mesa-hoja-inferior-derecha {
+    right: -120px;
+
+    width: 230px;
+    height: 180px;
+
+    transform:
+      scaleX(-1)
+      rotate(10deg);
+
+    transform-origin:
+      center center;
+  }
+
+
+  /* ========================================================
+     PIE
+  ======================================================== */
+
+  .escolar-mesa-pie {
+    margin-top: 54px;
+  }
+
+
+  .escolar-mesa-pie p {
+    max-width: 290px;
+
+    margin-inline: auto;
+
+    line-height: 1.6;
+  }
+}
+
+
+/* ==========================================================
+   HOVER SOLO EN DISPOSITIVOS QUE LO SOPORTAN
+========================================================== */
+
+@media (
+  hover: hover
+) and (
+  pointer: fine
+) {
+  .escolar-mesa-objeto {
+    cursor: pointer;
+  }
+}
+
+
+/* ==========================================================
+   ACCESIBILIDAD
+========================================================== */
+
+@media (
+  prefers-reduced-motion:
+    reduce
+) {
+  .escolar-mesa-pista-icono {
+    animation:
+      none !important;
+  }
+
+
+  .escolar-mesa-objeto,
+  .escolar-mesa-objeto-visual,
+  .escolar-mesa-tarjeta {
+    transition:
+      none !important;
+  }
+
+
+  .escolar-mesa-objeto:hover
+    .escolar-mesa-objeto-visual,
+  .escolar-mesa-objeto:focus-visible
+    .escolar-mesa-objeto-visual {
+    transform: none;
+  }
+}

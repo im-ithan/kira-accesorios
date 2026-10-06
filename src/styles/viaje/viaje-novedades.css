@@ -1,0 +1,1626 @@
+/* =========================================================
+   KIRA — VIAJE
+   NOVEDADES · AUSTRALIA
+
+   SECUENCIA VISUAL
+
+   1. Australia entra en pantalla.
+   2. Aparece el encabezado.
+   3. Kira entra desde la izquierda.
+   4. Kira atraviesa la carretera.
+   5. Cada producto aparece después de que Kira
+      pasa por su zona.
+   6. Kira sale por la derecha.
+   7. Los productos permanecen visibles.
+   8. Australia se funde hacia el crema de Kira.
+
+   Australia funciona como escenario visual.
+   No se presenta como destino comercial.
+   ========================================================= */
+
+
+/* =========================================================
+   1. SECCIÓN
+   ========================================================= */
+
+.viaje-novedades {
+  position: relative;
+
+  width: 100%;
+
+  margin-top: -2px;
+  padding: 0;
+
+  overflow: hidden;
+
+  background: #f8f7f3;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   2. ESCENA PRINCIPAL
+
+   La escena mantiene una altura suficientemente grande
+   para permitir:
+
+   - leer el encabezado;
+   - ver entrar a Kira;
+   - seguir el recorrido;
+   - descubrir los productos;
+   - ver salir el vehículo.
+   ========================================================= */
+
+.viaje-novedades__escena {
+  position: relative;
+
+  width: 100%;
+
+  height:
+    clamp(
+      690px,
+      84svh,
+      900px
+    );
+
+  overflow: hidden;
+
+  background: #d4a96e;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   3. TRANSICIÓN COLOMBIA → AUSTRALIA
+
+   Continúa el tono oscuro cálido con el que termina
+   la escena anterior.
+
+   Evita un corte duro entre ambas fotografías.
+   ========================================================= */
+
+.viaje-novedades__escena::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: 150px;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(41, 35, 27, 0.48) 0%,
+      rgba(41, 35, 27, 0.34) 20%,
+      rgba(41, 35, 27, 0.18) 45%,
+      rgba(41, 35, 27, 0.07) 70%,
+      rgba(41, 35, 27, 0) 100%
+    );
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   4. PAISAJE AUSTRALIA
+   ========================================================= */
+
+.viaje-novedades__paisaje {
+  position: absolute !important;
+
+  inset: 0;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover;
+  object-position: center center;
+
+  transform:
+    scale(1.012);
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   5. CAPA AMBIENTAL
+
+   Refuerza principalmente:
+
+   - contraste superior;
+   - legibilidad del título;
+   - profundidad de la escena.
+
+   La carretera queda relativamente limpia.
+   ========================================================= */
+
+.viaje-novedades__ambiente {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(18, 22, 16, 0.34) 0%,
+      rgba(18, 22, 16, 0.15) 28%,
+      rgba(18, 22, 16, 0.03) 52%,
+      rgba(18, 22, 16, 0) 68%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(15, 20, 15, 0.20) 0%,
+      rgba(15, 20, 15, 0.06) 32%,
+      rgba(15, 20, 15, 0) 55%
+    );
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   6. ENCABEZADO
+   ========================================================= */
+
+.viaje-novedades__encabezado {
+  position: absolute;
+
+  top:
+    clamp(
+      76px,
+      9vh,
+      112px
+    );
+
+  left:
+    max(
+      6vw,
+      64px
+    );
+
+  width:
+    min(
+      600px,
+      45vw
+    );
+
+  opacity:
+    var(--progreso-contenido);
+
+  transform:
+    translateY(
+      calc(
+        (1 - var(--progreso-contenido)) *
+        22px
+      )
+    );
+
+  color: #ffffff;
+
+  pointer-events: none;
+
+  will-change:
+    opacity,
+    transform;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   7. ETIQUETA
+   ========================================================= */
+
+.viaje-novedades__etiqueta {
+  display: inline-flex;
+
+  align-items: center;
+
+  margin:
+    0
+    0
+    16px;
+
+  padding:
+    8px
+    13px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.34);
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  backdrop-filter:
+    blur(10px);
+
+  -webkit-backdrop-filter:
+    blur(10px);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  color:
+    rgba(255, 255, 255, 0.92);
+}
+
+
+/* =========================================================
+   8. TÍTULO
+   ========================================================= */
+
+.viaje-novedades__titulo {
+  max-width: 590px;
+
+  margin: 0;
+
+  font-size:
+    clamp(
+      2.8rem,
+      4.8vw,
+      5.3rem
+    );
+
+  font-weight: 520;
+
+  line-height: 0.96;
+
+  letter-spacing: -0.052em;
+
+  text-wrap: balance;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 2px 16px
+      rgba(0, 0, 0, 0.16),
+    0 8px 38px
+      rgba(0, 0, 0, 0.12);
+}
+
+
+.viaje-novedades__titulo span {
+  color: #e6e8b3;
+}
+
+
+/* =========================================================
+   9. DESCRIPCIÓN
+   ========================================================= */
+
+.viaje-novedades__descripcion {
+  max-width: 310px;
+
+  margin:
+    18px
+    16px
+    0;
+
+  font-size:
+    clamp(
+      0.95rem,
+      1.1vw,
+      1.08rem
+    );
+
+  line-height: 1.65;
+
+  color:
+    rgba(255, 255, 255, 0.88);
+
+  text-shadow:
+    0 2px 12px
+      rgba(0, 0, 0, 0.16);
+}
+
+
+/* =========================================================
+   10. ZONA DE PRODUCTOS
+
+   Los productos ocupan la zona media de la escena.
+
+   Dejamos libre la parte inferior para que Kira
+   tenga una carretera visual clara.
+   ========================================================= */
+
+.viaje-novedades__productos {
+  position: absolute;
+
+  top: 44%;
+
+  right: 5%;
+  left: 27%;
+
+  height: 280px;
+
+  pointer-events: none;
+
+  z-index: 3;
+}
+
+
+/* =========================================================
+   11. PRODUCTO · REVELADO
+
+   Este es uno de los cambios principales.
+
+   Antes:
+   producto subía + escalaba.
+
+   Ahora:
+   Kira pasa y el producto se descubre horizontalmente
+   siguiendo la dirección del vehículo.
+
+   0:
+   completamente oculto.
+
+   1:
+   completamente visible.
+   ========================================================= */
+
+.viaje-novedades__producto {
+  --progreso-producto: 0;
+
+  position: absolute;
+
+  width:
+    clamp(
+      175px,
+      15vw,
+      230px
+    );
+
+  opacity:
+    var(--progreso-producto);
+
+  /*
+     Revelado izquierda → derecha.
+
+     Visualmente parece que Kira acaba de descubrir
+     el producto al pasar.
+  */
+  clip-path:
+    inset(
+      0
+      calc(
+        (1 - var(--progreso-producto)) *
+        100%
+      )
+      0
+      0
+      round 24px
+    );
+
+  transform:
+    translateX(
+      calc(
+        (1 - var(--progreso-producto)) *
+        -20px
+      )
+    )
+    translateY(
+      calc(
+        (1 - var(--progreso-producto)) *
+        10px
+      )
+    )
+    scale(
+      calc(
+        0.96 +
+        var(--progreso-producto) *
+        0.04
+      )
+    );
+
+  filter:
+    blur(
+      calc(
+        (1 - var(--progreso-producto)) *
+        1.5px
+      )
+    );
+
+  transform-origin:
+    left center;
+
+  pointer-events: auto;
+
+  will-change:
+    opacity,
+    transform,
+    clip-path,
+    filter;
+}
+
+
+/* =========================================================
+   12. POSICIÓN DE LOS PRODUCTOS
+
+   No usamos una cuadrícula perfecta.
+
+   Los pequeños desniveles ayudan a integrarlos
+   con el paisaje.
+   ========================================================= */
+
+.viaje-novedades__producto--1 {
+  top: 18px;
+  left: 0;
+
+  z-index: 3;
+}
+
+
+.viaje-novedades__producto--2 {
+  top: 68px;
+  left: 38%;
+
+  z-index: 4;
+}
+
+
+.viaje-novedades__producto--3 {
+  top: 6px;
+  right: 0;
+
+  z-index: 3;
+}
+
+
+/* =========================================================
+   13. ENLACE DEL PRODUCTO
+   ========================================================= */
+
+.viaje-novedades__producto-enlace {
+  display: block;
+
+  width: 100%;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   14. TARJETA VISUAL
+
+   Mantiene un efecto tipo cristal suave para integrarse
+   con la fotografía sin parecer una tarjeta blanca
+   convencional de ecommerce.
+   ========================================================= */
+
+.viaje-novedades__producto-visual {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 0.9;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.48);
+
+  border-radius: 24px;
+
+  background:
+    rgba(248, 247, 243, 0.90);
+
+  box-shadow:
+    0 18px 50px
+      rgba(52, 40, 24, 0.16);
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+}
+
+
+/* =========================================================
+   15. IMAGEN DEL PRODUCTO
+   ========================================================= */
+
+.viaje-novedades__producto-imagen {
+  object-fit: contain;
+
+  padding: 22px;
+
+  transform:
+    scale(0.92);
+
+  transition:
+    transform
+    350ms
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.viaje-novedades__producto-enlace:hover
+.viaje-novedades__producto-imagen {
+  transform:
+    scale(1);
+}
+
+
+/* =========================================================
+   16. INFORMACIÓN DEL PRODUCTO
+   ========================================================= */
+
+.viaje-novedades__producto-informacion {
+  padding:
+    12px
+    4px
+    0;
+}
+
+
+/* =========================================================
+   17. NOMBRE
+   ========================================================= */
+
+.viaje-novedades__producto-nombre {
+  margin: 0;
+
+  font-size: 0.96rem;
+  font-weight: 650;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.02em;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 2px 12px
+      rgba(0, 0, 0, 0.30);
+}
+
+
+/* =========================================================
+   18. DESCRIPCIÓN
+   ========================================================= */
+
+.viaje-novedades__producto-descripcion {
+  margin:
+    5px
+    0
+    0;
+
+  font-size: 0.76rem;
+
+  line-height: 1.4;
+
+  color:
+    rgba(255, 255, 255, 0.80);
+
+  text-shadow:
+    0 2px 10px
+      rgba(0, 0, 0, 0.26);
+}
+
+
+/* =========================================================
+   19. PRECIO
+   ========================================================= */
+
+.viaje-novedades__producto-precio {
+  display: inline-block;
+
+  margin-top: 7px;
+
+  font-size: 0.88rem;
+  font-weight: 700;
+
+  color: #eef0bd;
+
+  text-shadow:
+    0 2px 10px
+      rgba(0, 0, 0, 0.24);
+}
+
+
+/* =========================================================
+   20. CARRO DE KIRA
+
+   IMPORTANTE:
+
+   El carro está POR DELANTE de los productos.
+
+   productos:
+   z-index 3 / 4
+
+   carro:
+   z-index 6
+
+   Así Kira puede cubrir parcialmente el producto
+   mientras pasa y reforzar la ilusión de revelado.
+   ========================================================= */
+
+.viaje-novedades__carro {
+  position: absolute;
+
+  bottom: 3.5%;
+  left: 0;
+
+  width:
+    clamp(
+      430px,
+      42vw,
+      700px
+    );
+
+  aspect-ratio:
+    1.55 / 1;
+
+  transform:
+    translate3d(
+      calc(
+        -112% +
+        var(--progreso-carro) *
+        (100vw + 112%)
+      ),
+      0,
+      0
+    );
+
+  will-change:
+    transform;
+
+  pointer-events: none;
+
+  z-index: 6;
+}
+
+
+/* =========================================================
+   21. IMAGEN DEL CARRO
+
+   Aumentamos ligeramente la presencia visual.
+
+   El drop-shadow ayuda a separarlo del paisaje
+   sin parecer una pegatina.
+   ========================================================= */
+
+.viaje-novedades__carro-imagen {
+  object-fit: contain;
+
+  object-position:
+    center bottom;
+
+  filter:
+    drop-shadow(
+      0 20px 18px
+      rgba(35, 25, 13, 0.26)
+    );
+}
+
+
+/* =========================================================
+   22. INDICADOR
+   ========================================================= */
+
+.viaje-novedades__indicador {
+  position: absolute;
+
+  right:
+    max(
+      4vw,
+      40px
+    );
+
+  bottom: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  font-size: 0.67rem;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  color:
+    rgba(255, 255, 255, 0.78);
+
+  pointer-events: none;
+
+  z-index: 7;
+}
+
+
+/* =========================================================
+   23. LÍNEA DEL INDICADOR
+   ========================================================= */
+
+.viaje-novedades__indicador-linea {
+  position: relative;
+
+  display: block;
+
+  width: 90px;
+  height: 1px;
+
+  overflow: hidden;
+
+  background:
+    rgba(255, 255, 255, 0.30);
+}
+
+
+.viaje-novedades__indicador-progreso {
+  position: absolute;
+
+  inset: 0;
+
+  background: #eef0bd;
+
+  transform:
+    scaleX(
+      var(--progreso-general)
+    );
+
+  transform-origin:
+    left center;
+
+  will-change:
+    transform;
+}
+
+
+/* =========================================================
+   24. TRANSICIÓN AUSTRALIA → CREMA
+   ========================================================= */
+
+.viaje-novedades__transicion-inferior {
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 105px;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to top,
+      #f8f7f3 0%,
+      rgba(248, 247, 243, 0.78) 24%,
+      rgba(248, 247, 243, 0.24) 64%,
+      rgba(248, 247, 243, 0) 100%
+    );
+
+  z-index: 8;
+}
+
+
+/* =========================================================
+   25. CIERRE COMERCIAL
+   ========================================================= */
+
+.viaje-novedades__cierre {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  width:
+    min(
+      1180px,
+      calc(100% - 80px)
+    );
+
+  margin:
+    0
+    auto;
+
+  padding:
+    48px
+    0
+    76px;
+
+  border-bottom:
+    1px solid
+    rgba(24, 24, 24, 0.10);
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   26. TEXTO DEL CIERRE
+   ========================================================= */
+
+.viaje-novedades__cierre-texto {
+  max-width: 480px;
+
+  margin: 0;
+
+  font-size:
+    clamp(
+      1.3rem,
+      2vw,
+      2rem
+    );
+
+  font-weight: 450;
+
+  line-height: 1.2;
+
+  letter-spacing:
+    -0.035em;
+
+  color: #20231f;
+}
+
+
+/* =========================================================
+   27. BOTÓN VER TODAS
+   ========================================================= */
+
+.viaje-novedades__ver-todas {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding:
+    14px
+    20px;
+
+  border:
+    1px solid
+    rgba(32, 35, 31, 0.16);
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.38);
+
+  font-size: 0.84rem;
+  font-weight: 650;
+
+  color: #20231f;
+
+  text-decoration: none;
+
+  transition:
+    background-color
+    250ms
+    ease,
+    border-color
+    250ms
+    ease,
+    transform
+    250ms
+    ease;
+}
+
+
+.viaje-novedades__ver-todas:hover {
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  border-color:
+    rgba(32, 35, 31, 0.28);
+
+  transform:
+    translateY(-2px);
+}
+
+
+.viaje-novedades__ver-todas-flecha {
+  transition:
+    transform
+    250ms
+    ease;
+}
+
+
+.viaje-novedades__ver-todas:hover
+.viaje-novedades__ver-todas-flecha {
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   28. PANTALLAS GRANDES
+   ========================================================= */
+
+@media (min-width: 1600px) {
+
+  .viaje-novedades__escena {
+    height: 880px;
+  }
+
+
+  .viaje-novedades__escena::before {
+    height: 170px;
+  }
+
+
+  .viaje-novedades__productos {
+    right: 8%;
+    left: 29%;
+  }
+
+
+  .viaje-novedades__producto {
+    width: 235px;
+  }
+
+
+  .viaje-novedades__carro {
+    width: 700px;
+  }
+}
+
+
+/* =========================================================
+   29. LAPTOP
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+  .viaje-novedades__escena {
+    height:
+      clamp(
+        660px,
+        82svh,
+        820px
+      );
+  }
+
+
+  .viaje-novedades__encabezado {
+    left: 48px;
+
+    width: 48vw;
+  }
+
+
+  .viaje-novedades__productos {
+    top: 45%;
+
+    right: 4%;
+    left: 24%;
+  }
+
+
+  .viaje-novedades__producto {
+    width:
+      clamp(
+        155px,
+        17vw,
+        205px
+      );
+  }
+
+
+  .viaje-novedades__carro {
+    width:
+      clamp(
+        390px,
+        44vw,
+        570px
+      );
+  }
+}
+
+
+/* =========================================================
+   30. TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .viaje-novedades__escena {
+    height: 770px;
+  }
+
+
+  .viaje-novedades__escena::before {
+    height: 125px;
+  }
+
+
+  .viaje-novedades__paisaje {
+    object-position:
+      55%
+      center;
+  }
+
+
+  .viaje-novedades__encabezado {
+    top: 60px;
+
+    right: 32px;
+    left: 32px;
+
+    width: auto;
+
+    max-width: 560px;
+  }
+
+
+  .viaje-novedades__titulo {
+    max-width: 520px;
+
+    font-size:
+      clamp(
+        2.7rem,
+        7.5vw,
+        4.3rem
+      );
+  }
+
+
+  .viaje-novedades__descripcion {
+    max-width: 350px;
+  }
+
+
+  /* ---------------------------------------------------------
+     PRODUCTOS
+     --------------------------------------------------------- */
+
+  .viaje-novedades__productos {
+    top: 43%;
+
+    right: 24px;
+    left: 24px;
+
+    height: 250px;
+  }
+
+
+  .viaje-novedades__producto {
+    width:
+      clamp(
+        140px,
+        26vw,
+        185px
+      );
+  }
+
+
+  .viaje-novedades__producto--1 {
+    top: 0;
+    left: 0;
+  }
+
+
+  /*
+     IMPORTANTE:
+
+     Antes el producto 2 tenía un transform especial.
+
+     Lo eliminamos porque interfería con la nueva
+     animación de revelado.
+
+     Ahora utilizamos un wrapper conceptual:
+     simplemente cambiamos su posición.
+  */
+
+  .viaje-novedades__producto--2 {
+    top: 54px;
+    left: 50%;
+
+    margin-left:
+      clamp(
+        -92px,
+        -13vw,
+        -70px
+      );
+  }
+
+
+  .viaje-novedades__producto--3 {
+    top: 0;
+    right: 0;
+  }
+
+
+  /* ---------------------------------------------------------
+     CARRO
+     --------------------------------------------------------- */
+
+  .viaje-novedades__carro {
+    bottom: 4.5%;
+
+    width:
+      clamp(
+        350px,
+        66vw,
+        520px
+      );
+  }
+
+
+  /* ---------------------------------------------------------
+     CIERRE
+     --------------------------------------------------------- */
+
+  .viaje-novedades__cierre {
+    width:
+      calc(
+        100% - 64px
+      );
+
+    padding:
+      42px
+      0
+      64px;
+  }
+}
+
+
+/* =========================================================
+   31. MÓVIL
+   ========================================================= */
+
+@media (max-width: 620px) {
+
+  .viaje-novedades__escena {
+    height: 730px;
+  }
+
+
+  .viaje-novedades__escena::before {
+    height: 110px;
+  }
+
+
+  .viaje-novedades__paisaje {
+    object-position:
+      58%
+      center;
+  }
+
+
+  .viaje-novedades__ambiente {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(16, 20, 14, 0.46) 0%,
+        rgba(16, 20, 14, 0.20) 34%,
+        rgba(16, 20, 14, 0.04) 56%,
+        rgba(16, 20, 14, 0) 68%
+      );
+  }
+
+
+  /* ---------------------------------------------------------
+     ENCABEZADO
+     --------------------------------------------------------- */
+
+  .viaje-novedades__encabezado {
+    top: 48px;
+
+    right: 22px;
+    left: 22px;
+
+    width: auto;
+  }
+
+
+  .viaje-novedades__etiqueta {
+    margin-bottom: 12px;
+
+    font-size: 0.64rem;
+  }
+
+
+  .viaje-novedades__titulo {
+    max-width: 420px;
+
+    font-size:
+      clamp(
+        2.25rem,
+        10vw,
+        3.35rem
+      );
+
+    line-height: 0.98;
+  }
+
+
+  .viaje-novedades__descripcion {
+    max-width: 300px;
+
+    margin-top: 14px;
+
+    font-size: 0.88rem;
+
+    line-height: 1.55;
+  }
+
+
+  /* ---------------------------------------------------------
+     PRODUCTOS
+
+     En móvil reducimos las tarjetas pero mantenemos
+     los tres productos en la misma escena.
+     --------------------------------------------------------- */
+
+  .viaje-novedades__productos {
+    top: 43%;
+
+    right: 14px;
+    left: 14px;
+
+    height: 240px;
+  }
+
+
+  .viaje-novedades__producto {
+    width:
+      clamp(
+        108px,
+        31vw,
+        145px
+      );
+
+    clip-path:
+      inset(
+        0
+        calc(
+          (1 - var(--progreso-producto)) *
+          100%
+        )
+        0
+        0
+        round 18px
+      );
+
+    transform:
+      translateX(
+        calc(
+          (1 - var(--progreso-producto)) *
+          -14px
+        )
+      )
+      translateY(
+        calc(
+          (1 - var(--progreso-producto)) *
+          8px
+        )
+      )
+      scale(
+        calc(
+          0.97 +
+          var(--progreso-producto) *
+          0.03
+        )
+      );
+  }
+
+
+  .viaje-novedades__producto--1 {
+    top: 0;
+    left: 0;
+  }
+
+
+  .viaje-novedades__producto--2 {
+    top: 52px;
+
+    left: 50%;
+
+    margin-left:
+      clamp(
+        -72px,
+        -15.5vw,
+        -54px
+      );
+  }
+
+
+  .viaje-novedades__producto--3 {
+    top: 0;
+    right: 0;
+  }
+
+
+  .viaje-novedades__producto-visual {
+    border-radius: 18px;
+  }
+
+
+  .viaje-novedades__producto-imagen {
+    padding: 13px;
+  }
+
+
+  .viaje-novedades__producto-informacion {
+    padding-top: 9px;
+  }
+
+
+  .viaje-novedades__producto-nombre {
+    font-size: 0.76rem;
+  }
+
+
+  .viaje-novedades__producto-descripcion {
+    display: none;
+  }
+
+
+  .viaje-novedades__producto-precio {
+    margin-top: 4px;
+
+    font-size: 0.75rem;
+  }
+
+
+  /* ---------------------------------------------------------
+     CARRO
+
+     Sigue siendo protagonista.
+
+     Lo mantenemos grande incluso en móvil para que la
+     interacción no pierda su razón de existir.
+     --------------------------------------------------------- */
+
+  .viaje-novedades__carro {
+    bottom: 4%;
+
+    width:
+      clamp(
+        310px,
+        82vw,
+        430px
+      );
+  }
+
+
+  /* ---------------------------------------------------------
+     INDICADOR
+     --------------------------------------------------------- */
+
+  .viaje-novedades__indicador {
+    right: 18px;
+
+    bottom: 25px;
+
+    gap: 10px;
+
+    font-size: 0.56rem;
+  }
+
+
+  .viaje-novedades__indicador-linea {
+    width: 54px;
+  }
+
+
+  /* ---------------------------------------------------------
+     TRANSICIÓN INFERIOR
+     --------------------------------------------------------- */
+
+  .viaje-novedades__transicion-inferior {
+    height: 90px;
+  }
+
+
+  /* ---------------------------------------------------------
+     CIERRE
+     --------------------------------------------------------- */
+
+  .viaje-novedades__cierre {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 26px;
+
+    width:
+      calc(
+        100% - 44px
+      );
+
+    padding:
+      38px
+      0
+      58px;
+  }
+
+
+  .viaje-novedades__cierre-texto {
+    max-width: 360px;
+
+    font-size: 1.35rem;
+  }
+
+
+  .viaje-novedades__ver-todas {
+    gap: 14px;
+
+    padding:
+      13px
+      18px;
+  }
+}
+
+
+/* =========================================================
+   32. MÓVILES PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .viaje-novedades__escena {
+    height: 700px;
+  }
+
+
+  .viaje-novedades__encabezado {
+    right: 18px;
+    left: 18px;
+  }
+
+
+  .viaje-novedades__productos {
+    right: 10px;
+    left: 10px;
+  }
+
+
+  .viaje-novedades__producto {
+    width:
+      clamp(
+        102px,
+        31vw,
+        126px
+      );
+  }
+
+
+  .viaje-novedades__producto--2 {
+    margin-left:
+      clamp(
+        -63px,
+        -15.5vw,
+        -51px
+      );
+  }
+
+
+  .viaje-novedades__carro {
+    width:
+      min(
+        330px,
+        88vw
+      );
+  }
+}
+
+
+/* =========================================================
+   33. DISPOSITIVOS CON HOVER
+   ========================================================= */
+
+@media (hover: hover) {
+
+  .viaje-novedades__producto-enlace:hover
+  .viaje-novedades__producto-visual {
+    border-color:
+      rgba(255, 255, 255, 0.68);
+
+    box-shadow:
+      0 22px 58px
+      rgba(52, 40, 24, 0.20);
+  }
+}
+
+
+/* =========================================================
+   34. ACCESIBILIDAD · FOCO
+   ========================================================= */
+
+.viaje-novedades__producto-enlace:focus-visible,
+.viaje-novedades__ver-todas:focus-visible {
+  outline:
+    3px solid
+    rgba(238, 240, 189, 0.95);
+
+  outline-offset: 4px;
+
+  border-radius: 20px;
+}
+
+
+/* =========================================================
+   35. MOVIMIENTO REDUCIDO
+
+   Para usuarios que prefieren menos movimiento:
+
+   - mostramos directamente los productos;
+   - mostramos directamente el encabezado;
+   - no hacemos recorrer el vehículo por pantalla.
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .viaje-novedades__encabezado {
+    opacity: 1;
+
+    transform: none;
+  }
+
+
+  .viaje-novedades__producto {
+    opacity: 1;
+
+    clip-path: none;
+
+    filter: none;
+
+    transform: none;
+  }
+
+
+  /*
+     En tablet/móvil el producto central utiliza
+     margin-left para centrarse, por lo que no necesitamos
+     ningún transform adicional aquí.
+  */
+
+
+  .viaje-novedades__carro {
+    transform:
+      translate3d(
+        105vw,
+        0,
+        0
+      );
+  }
+
+
+  .viaje-novedades__producto-imagen,
+  .viaje-novedades__ver-todas,
+  .viaje-novedades__ver-todas-flecha {
+    transition: none;
+  }
+}

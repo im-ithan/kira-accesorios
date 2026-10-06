@@ -1,0 +1,1185 @@
+/* =========================================================
+   KIRA — VIAJE
+   ANTES DE PARTIR
+
+   Cierre final de la categoría Viaje.
+
+   Estructura:
+   1. Texto editorial.
+   2. Conceptos.
+   3. CTA hacia productos de Viaje.
+   4. Ventana de avión con video.
+   5. Footer después de este componente.
+
+   La ventana funciona como cierre visual de la
+   experiencia y el CTA devuelve al ecommerce.
+   ========================================================= */
+
+
+/* =========================================================
+   1. SECCIÓN
+   ========================================================= */
+
+.viaje-antes-de-partir {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  padding:
+    clamp(90px, 8vw, 130px)
+    clamp(24px, 5vw, 80px)
+    clamp(80px, 7vw, 110px);
+
+  background:
+    radial-gradient(
+      circle at 76% 30%,
+      rgba(174, 190, 177, 0.13) 0%,
+      rgba(174, 190, 177, 0.045) 26%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 28% 72%,
+      rgba(119, 123, 93, 0.045) 0%,
+      transparent 40%
+    ),
+    #f8f7f3;
+
+  color: #181818;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   2. TRANSICIÓN DESDE AUSTRALIA
+   ========================================================= */
+
+.viaje-antes-de-partir__transicion {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height:
+    clamp(
+      70px,
+      8vw,
+      115px
+    );
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(45, 38, 29, 0.1) 0%,
+      rgba(80, 70, 56, 0.03) 42%,
+      transparent 100%
+    );
+
+  opacity: 0.38;
+}
+
+
+/* =========================================================
+   3. CONTENEDOR PRINCIPAL
+   ========================================================= */
+
+.viaje-antes-de-partir__inicio {
+  position: relative;
+
+  z-index: 3;
+
+  width:
+    min(
+      100%,
+      1280px
+    );
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   4. GRID PRINCIPAL
+
+   Izquierda:
+   mensaje + CTA.
+
+   Derecha:
+   ventana de avión.
+   ========================================================= */
+
+.viaje-antes-de-partir__inicio-contenido {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(430px, 1.1fr);
+
+  align-items: center;
+
+  gap:
+    clamp(
+      55px,
+      7vw,
+      110px
+    );
+}
+
+
+/* =========================================================
+   5. COLUMNA DE TEXTO
+   ========================================================= */
+
+.viaje-antes-de-partir__texto {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+  max-width: 570px;
+}
+
+
+/* =========================================================
+   6. ETIQUETA
+   ========================================================= */
+
+.viaje-antes-de-partir__etiqueta {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 31px;
+
+  margin:
+    0
+    0
+    22px;
+
+  padding:
+    0
+    15px;
+
+  border:
+    1px solid
+    rgba(102, 115, 99, 0.2);
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.42);
+
+  color: #667363;
+
+  font-size: 0.67rem;
+  font-weight: 750;
+
+  line-height: 1;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* =========================================================
+   7. TÍTULO
+   ========================================================= */
+
+.viaje-antes-de-partir__titulo {
+  margin: 0;
+
+  color: #181818;
+
+  font-size:
+    clamp(
+      3.5rem,
+      5.5vw,
+      6.15rem
+    );
+
+  font-weight: 650;
+
+  line-height: 0.91;
+
+  letter-spacing: -0.065em;
+
+  text-wrap: balance;
+}
+
+
+.viaje-antes-de-partir__titulo span {
+  display: block;
+
+  color: #667363;
+}
+
+
+/* =========================================================
+   8. DESCRIPCIÓN
+   ========================================================= */
+
+.viaje-antes-de-partir__descripcion {
+  width:
+    min(
+      100%,
+      500px
+    );
+
+  margin:
+    28px
+    0
+    0;
+
+  color:
+    rgba(24, 24, 24, 0.59);
+
+  font-size:
+    clamp(
+      1rem,
+      1.1vw,
+      1.13rem
+    );
+
+  font-weight: 400;
+
+  line-height: 1.65;
+
+  letter-spacing: -0.01em;
+}
+
+
+/* =========================================================
+   9. CONCEPTOS
+   ========================================================= */
+
+.viaje-antes-de-partir__conceptos {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-top: 28px;
+
+  color:
+    rgba(80, 91, 75, 0.72);
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.07em;
+}
+
+
+.viaje-antes-de-partir__conceptos i {
+  display: block;
+
+  flex: 0 0 auto;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(102, 115, 99, 0.38);
+}
+
+
+/* =========================================================
+   10. CTA
+
+   Ahora forma parte de la columna izquierda.
+
+   Es el cierre comercial de toda la categoría.
+   ========================================================= */
+
+.viaje-antes-de-partir__accion {
+  position: relative;
+
+  z-index: 10;
+
+  display: flex;
+
+  justify-content: flex-start;
+
+  margin-top:
+    clamp(
+      32px,
+      3vw,
+      42px
+    );
+}
+
+
+/* =========================================================
+   11. BOTÓN
+   ========================================================= */
+
+.viaje-antes-de-partir__boton {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  min-height: 58px;
+
+  padding:
+    0
+    29px;
+
+  border:
+    1px solid
+    #667363;
+
+  border-radius: 999px;
+
+  background: #667363;
+
+  color: #f8f7f3;
+
+  text-decoration: none;
+
+  font-size: 0.92rem;
+
+  font-weight: 650;
+
+  line-height: 1;
+
+  letter-spacing: -0.01em;
+
+  box-shadow:
+    0
+    13px
+    30px
+    rgba(63, 73, 59, 0.12);
+
+  transition:
+    transform 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+
+.viaje-antes-de-partir__boton:hover {
+  transform:
+    translateY(-2px);
+
+  background: #566351;
+
+  border-color: #566351;
+
+  box-shadow:
+    0
+    18px
+    38px
+    rgba(63, 73, 59, 0.17);
+}
+
+
+.viaje-antes-de-partir__boton:focus-visible {
+  outline:
+    3px solid
+    rgba(102, 115, 99, 0.3);
+
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   12. FLECHA DEL BOTÓN
+   ========================================================= */
+
+.viaje-antes-de-partir__boton-flecha {
+  display: inline-block;
+
+  font-size: 1.12rem;
+
+  line-height: 1;
+
+  transition:
+    transform 220ms ease;
+}
+
+
+.viaje-antes-de-partir__boton:hover
+.viaje-antes-de-partir__boton-flecha {
+  transform:
+    translateX(5px);
+}
+
+
+/* =========================================================
+   13. ÁREA DE LA VENTANA
+   ========================================================= */
+
+.viaje-antes-de-partir__ventana-area {
+  position: relative;
+
+  z-index: 4;
+
+  width:
+    min(
+      100%,
+      590px
+    );
+
+  margin:
+    0
+    auto;
+
+  padding-bottom: 38px;
+
+  transform:
+    rotate(1.3deg);
+}
+
+
+/* =========================================================
+   14. SOMBRA DE VENTANA
+   ========================================================= */
+
+.viaje-antes-de-partir__ventana-sombra {
+  position: absolute;
+
+  top: 8%;
+  left: 50%;
+
+  z-index: 0;
+
+  width: 76%;
+  height: 84%;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    48% 48% 43% 43%
+    /
+    34% 34% 46% 46%;
+
+  background:
+    rgba(72, 79, 68, 0.13);
+
+  filter:
+    blur(35px);
+
+  opacity: 0.5;
+}
+
+
+/* =========================================================
+   15. MARCO EXTERIOR
+   ========================================================= */
+
+.viaje-antes-de-partir__ventana-marco {
+  position: relative;
+
+  z-index: 2;
+
+  width:
+    min(
+      78%,
+      455px
+    );
+
+  aspect-ratio: 0.86;
+
+  margin: 0 auto;
+
+  padding:
+    clamp(
+      17px,
+      1.7vw,
+      24px
+    );
+
+  border:
+    1px solid
+    rgba(123, 124, 112, 0.11);
+
+  border-radius:
+    48% 48% 43% 43%
+    /
+    30% 30% 44% 44%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f2f0e9 0%,
+      #e4e1d8 52%,
+      #f7f5ef 100%
+    );
+
+  box-shadow:
+    0
+    30px
+    70px
+    rgba(56, 61, 52, 0.11),
+    inset
+    0
+    2px
+    2px
+    rgba(255, 255, 255, 0.92),
+    inset
+    0
+    -2px
+    4px
+    rgba(89, 91, 82, 0.08);
+}
+
+
+/* Segundo nivel del marco */
+
+.viaje-antes-de-partir__ventana-marco::before {
+  content: "";
+
+  position: absolute;
+
+  inset:
+    clamp(
+      8px,
+      0.8vw,
+      12px
+    );
+
+  border:
+    1px solid
+    rgba(83, 88, 79, 0.08);
+
+  border-radius: inherit;
+
+  pointer-events: none;
+}
+
+
+/* Brillo exterior */
+
+.viaje-antes-de-partir__ventana-marco::after {
+  content: "";
+
+  position: absolute;
+
+  top: 9%;
+  left: 9%;
+
+  width: 26%;
+  height: 48%;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.35);
+
+  filter:
+    blur(17px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   16. INTERIOR DE LA VENTANA
+   ========================================================= */
+
+.viaje-antes-de-partir__ventana-interior {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(48, 55, 48, 0.12);
+
+  border-radius:
+    47% 47% 42% 42%
+    /
+    29% 29% 43% 43%;
+
+  background:
+    linear-gradient(
+      180deg,
+      #cdd9d8,
+      #e8ece6
+    );
+
+  box-shadow:
+    inset
+    0
+    0
+    28px
+    rgba(30, 38, 35, 0.15);
+}
+
+
+/* =========================================================
+   17. VIDEO
+   ========================================================= */
+
+.viaje-antes-de-partir__video {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transform:
+    scale(1.035);
+
+  filter:
+    saturate(0.9)
+    contrast(0.97)
+    brightness(1.02);
+}
+
+
+/* =========================================================
+   18. LUZ SOBRE EL VIDEO
+   ========================================================= */
+
+.viaje-antes-de-partir__ventana-luz {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      125deg,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0.05) 34%,
+      transparent 57%
+    );
+}
+
+
+/* =========================================================
+   19. REFLEJO DEL VIDRIO
+   ========================================================= */
+
+.viaje-antes-de-partir__ventana-reflejo {
+  position: absolute;
+
+  top: 5%;
+  left: 9%;
+
+  z-index: 3;
+
+  width: 32%;
+  height: 58%;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+
+  filter:
+    blur(7px);
+
+  transform:
+    rotate(9deg);
+
+  opacity: 0.7;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   20. FRASE DE LA VENTANA
+   ========================================================= */
+
+.viaje-antes-de-partir__ventana-frase {
+  position: absolute;
+
+  right: 1%;
+  bottom: 0;
+
+  z-index: 4;
+
+  margin: 0;
+
+  color:
+    rgba(73, 82, 68, 0.49);
+
+  font-size: 0.61rem;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  transform:
+    rotate(-1.3deg);
+}
+
+
+/* =========================================================
+   21. DECORACIÓN GENERAL
+   ========================================================= */
+
+.viaje-antes-de-partir__decoracion {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+.viaje-antes-de-partir__decoracion-punto {
+  position: absolute;
+
+  border-radius: 50%;
+
+  background:
+    rgba(102, 115, 99, 0.12);
+}
+
+
+.viaje-antes-de-partir__decoracion-punto--1 {
+  top: 20%;
+  left: 4%;
+
+  width: 5px;
+  height: 5px;
+}
+
+
+.viaje-antes-de-partir__decoracion-punto--2 {
+  top: 52%;
+  right: 6%;
+
+  width: 7px;
+  height: 7px;
+}
+
+
+.viaje-antes-de-partir__decoracion-punto--3 {
+  right: 17%;
+  bottom: 8%;
+
+  width: 4px;
+  height: 4px;
+}
+
+
+/* =========================================================
+   22. TABLET GRANDE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .viaje-antes-de-partir {
+    padding:
+      90px
+      34px
+      80px;
+  }
+
+
+  .viaje-antes-de-partir__inicio-contenido {
+    grid-template-columns:
+      minmax(0, 0.9fr)
+      minmax(370px, 1.1fr);
+
+    gap: 48px;
+  }
+
+
+  .viaje-antes-de-partir__titulo {
+    font-size:
+      clamp(
+        3.25rem,
+        6.7vw,
+        5rem
+      );
+  }
+
+
+  .viaje-antes-de-partir__ventana-marco {
+    width: 82%;
+  }
+
+}
+
+
+/* =========================================================
+   23. TABLET
+   ========================================================= */
+
+@media (max-width: 820px) {
+
+  .viaje-antes-de-partir {
+    padding:
+      82px
+      25px
+      68px;
+  }
+
+
+  .viaje-antes-de-partir__inicio-contenido {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+
+  .viaje-antes-de-partir__texto {
+    max-width: 620px;
+
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+
+  .viaje-antes-de-partir__titulo {
+    font-size:
+      clamp(
+        3.2rem,
+        10vw,
+        5rem
+      );
+  }
+
+
+  .viaje-antes-de-partir__descripcion {
+    max-width: 500px;
+
+    margin:
+      25px
+      auto
+      0;
+  }
+
+
+  .viaje-antes-de-partir__conceptos {
+    justify-content: center;
+
+    margin-top: 26px;
+  }
+
+
+  .viaje-antes-de-partir__accion {
+    justify-content: center;
+
+    margin-top: 34px;
+  }
+
+
+  .viaje-antes-de-partir__ventana-area {
+    width:
+      min(
+        100%,
+        520px
+      );
+  }
+
+
+  .viaje-antes-de-partir__ventana-marco {
+    width:
+      min(
+        76%,
+        400px
+      );
+  }
+
+}
+
+
+/* =========================================================
+   24. MÓVIL
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  .viaje-antes-de-partir {
+    padding:
+      70px
+      18px
+      55px;
+  }
+
+
+  .viaje-antes-de-partir__transicion {
+    height: 70px;
+  }
+
+
+  /* -------------------------------------------------------
+     ETIQUETA
+     ------------------------------------------------------- */
+
+  .viaje-antes-de-partir__etiqueta {
+    min-height: 28px;
+
+    margin-bottom: 17px;
+
+    padding:
+      0
+      12px;
+
+    font-size: 0.59rem;
+  }
+
+
+  /* -------------------------------------------------------
+     TÍTULO
+     ------------------------------------------------------- */
+
+  .viaje-antes-de-partir__titulo {
+    max-width: 390px;
+
+    margin:
+      0
+      auto;
+
+    font-size:
+      clamp(
+        2.8rem,
+        13vw,
+        3.9rem
+      );
+
+    line-height: 0.94;
+  }
+
+
+  /* -------------------------------------------------------
+     DESCRIPCIÓN
+     ------------------------------------------------------- */
+
+  .viaje-antes-de-partir__descripcion {
+    max-width: 335px;
+
+    margin-top: 20px;
+
+    font-size: 0.91rem;
+
+    line-height: 1.55;
+  }
+
+
+  /* -------------------------------------------------------
+     CONCEPTOS
+     ------------------------------------------------------- */
+
+  .viaje-antes-de-partir__conceptos {
+    gap: 10px;
+
+    margin-top: 23px;
+
+    font-size: 0.61rem;
+  }
+
+
+  /* -------------------------------------------------------
+     CTA
+     ------------------------------------------------------- */
+
+  .viaje-antes-de-partir__accion {
+    margin-top: 30px;
+  }
+
+
+  .viaje-antes-de-partir__boton {
+    min-height: 52px;
+
+    padding:
+      0
+      22px;
+
+    gap: 14px;
+
+    font-size: 0.84rem;
+  }
+
+
+  /* -------------------------------------------------------
+     VENTANA
+     ------------------------------------------------------- */
+
+  .viaje-antes-de-partir__inicio-contenido {
+    gap: 48px;
+  }
+
+
+  .viaje-antes-de-partir__ventana-area {
+    width: 100%;
+
+    padding-bottom: 30px;
+
+    transform:
+      rotate(0.8deg);
+  }
+
+
+  .viaje-antes-de-partir__ventana-marco {
+    width:
+      min(
+        78vw,
+        330px
+      );
+
+    padding: 15px;
+
+    box-shadow:
+      0
+      24px
+      55px
+      rgba(56, 61, 52, 0.1),
+      inset
+      0
+      2px
+      2px
+      rgba(255, 255, 255, 0.9);
+  }
+
+
+  .viaje-antes-de-partir__ventana-frase {
+    right: 50%;
+
+    width: 100%;
+
+    text-align: center;
+
+    transform:
+      translateX(50%);
+
+    font-size: 0.52rem;
+
+    letter-spacing: 0.1em;
+  }
+
+
+  /* -------------------------------------------------------
+     DECORACIÓN
+     ------------------------------------------------------- */
+
+  .viaje-antes-de-partir__decoracion-punto--1,
+  .viaje-antes-de-partir__decoracion-punto--3 {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   25. MÓVIL PEQUEÑO
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .viaje-antes-de-partir {
+    padding:
+      65px
+      15px
+      50px;
+  }
+
+
+  .viaje-antes-de-partir__titulo {
+    font-size:
+      clamp(
+        2.55rem,
+        13.5vw,
+        3.2rem
+      );
+  }
+
+
+  .viaje-antes-de-partir__descripcion {
+    max-width: 300px;
+
+    font-size: 0.87rem;
+  }
+
+
+  .viaje-antes-de-partir__conceptos {
+    font-size: 0.56rem;
+  }
+
+
+  .viaje-antes-de-partir__boton {
+    min-height: 50px;
+
+    padding:
+      0
+      19px;
+
+    gap: 11px;
+
+    font-size: 0.79rem;
+  }
+
+
+  .viaje-antes-de-partir__ventana-marco {
+    width:
+      min(
+        80vw,
+        300px
+      );
+  }
+
+}
+
+
+/* =========================================================
+   26. ACCESIBILIDAD
+   MOVIMIENTO REDUCIDO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .viaje-antes-de-partir__boton,
+  .viaje-antes-de-partir__boton-flecha {
+    transition: none;
+  }
+
+
+  .viaje-antes-de-partir__boton:hover {
+    transform: none;
+  }
+
+}
